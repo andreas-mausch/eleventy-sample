@@ -1,7 +1,9 @@
 {
   "name": "eleventy-sample",
   "version": "1.0.0",
-  "scripts": {
-  },
-  "license": "MIT"
+  "scripts": {},
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "1.0.1"
+  }
 }
