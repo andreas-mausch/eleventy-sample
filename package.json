@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "eleventy --serve",
+    "build": "eleventy",
     "clean": "rimraf ./_site/"
   },
   "license": "MIT",
