@@ -4,6 +4,34 @@ const fsPromises = require('fs/promises');
 const path = require('path');
 const swc = require('@swc/core');
 
+const typescriptPlugin = (eleventyConfig, options = {}) => {
+  eleventyConfig.addTemplateFormats("ts");
+  eleventyConfig.addExtension("ts", {
+    outputFileExtension: "js",
+    compile: async (content, inputPath) => {
+      const parsed = path.parse(inputPath);
+      if (parsed.name.startsWith("_")) {
+        return;
+      }
+
+      return async (data) => {
+        const compiled = await swc.transform(content, {
+          "jsc": {
+            "parser": {
+              "syntax": "typescript",
+              "tsx": false,
+              "decorators": false,
+              "dynamicImport": false
+            }
+          }
+        })
+          .then(js => swc.minify(js))
+        return compiled.code
+      }
+    }
+  });
+};
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("posts/*/*.{jpg,jpeg,png,svg}");
 
@@ -11,19 +39,5 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
 
   eleventyConfig.addPlugin(eleventySass);
-  eleventyConfig.addPlugin((eleventyConfig, options = {}) => {
-    eleventyConfig.addWatchTarget("./scripts/**/*.ts");
-
-    eleventyConfig.on('eleventy.before', async () => {
-      if (!fs.existsSync(path.join(eleventyConfig.dir.output, "scripts"))) {
-        await fsPromises.mkdir(path.join(eleventyConfig.dir.output, "scripts"), { recursive: true });
-      }
-
-      const outputFile = path.join(eleventyConfig.dir.output, "scripts", "index.js")
-      console.log("Writing", outputFile, "from ./scripts/index.ts");
-      const output = await swc.transformFile("./scripts/index.ts")
-        .then(js => swc.minify(js));
-      await fsPromises.writeFile(path.join(eleventyConfig.dir.output, "scripts", "index.js"), output.code);
-    });
-  });
+  eleventyConfig.addPlugin(typescriptPlugin);
 };
