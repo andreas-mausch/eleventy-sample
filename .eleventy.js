@@ -57,8 +57,8 @@ const imageMetadata = async (src) => await image(src, {
   }
 });
 
-const thumbnail = async (src, alt) => {
-  const metadata = await imageMetadata(src);
+async function thumbnail (src, alt) {
+  const metadata = await imageMetadata(path.join(path.parse(this.page.inputPath).dir, src));
 
   const imgSrc = metadata.jpeg
     ?.filter(img => img.width <= thumbnailWidth)
@@ -68,8 +68,8 @@ const thumbnail = async (src, alt) => {
   return `<img src="${imgSrc}" alt="${alt}">`;
 };
 
-const imageShortcode = async (src, alt, sizes = "(min-width: 30em) 50vw, 100vw") => {
-  const metadata = await imageMetadata(src);
+async function imageShortcode (src, alt, sizes = "(min-width: 30em) 50vw, 100vw") {
+  const metadata = await imageMetadata(path.join(path.parse(this.page.inputPath).dir, src));
 
   const imageAttributes = {
     alt,
