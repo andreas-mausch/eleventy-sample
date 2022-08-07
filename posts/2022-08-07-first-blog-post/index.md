@@ -8,4 +8,4 @@ tags:
 
 This is the Markdown content of my first blog post.
 
-![Image](image.jpg)
+{% image "image.jpg", "Image" %}
