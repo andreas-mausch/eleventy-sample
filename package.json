@@ -6,6 +6,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@11ty/eleventy": "2.0.0-canary.14"
+    "@11ty/eleventy": "2.0.0-canary.14",
+    "@11ty/eleventy-plugin-vite": "1.0.0"
   }
 }
