@@ -2,11 +2,13 @@
   "name": "eleventy-sample",
   "version": "1.0.0",
   "scripts": {
-    "dev": "eleventy --serve"
+    "dev": "eleventy --serve",
+    "clean": "rimraf ./_site/"
   },
   "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "2.0.0-canary.14",
-    "@11ty/eleventy-plugin-vite": "1.0.0"
+    "@11ty/eleventy-plugin-vite": "1.0.0",
+    "rimraf": "3.0.2"
   }
 }
