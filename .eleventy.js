@@ -1,6 +1,7 @@
 const eleventySass = require("eleventy-sass");
 const fs = require('fs');
 const fsPromises = require('fs/promises');
+const image = require("@11ty/eleventy-img");
 const path = require('path');
 const swc = require('@swc/core');
 
@@ -43,11 +44,32 @@ const typescriptPlugin = (eleventyConfig, options = {}) => {
   });
 };
 
+const thumbnail = async (src, alt) => {
+  const metadata = await image(src, {
+    widths: [300],
+    formats: ["jpeg"],
+    urlPath: "/images/",
+    outputDir: "./_site/images/"
+  });
+
+  const imageAttributes = {
+    alt,
+    sizes: "100vw",
+    loading: "lazy",
+    decoding: "async"
+  };
+
+  // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
+  return image.generateHTML(metadata, imageAttributes);
+};
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("posts/*/*.{jpg,jpeg,png,svg}");
 
   eleventyConfig.addLayoutAlias("page", "layouts/page.njk");
   eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
+
+  eleventyConfig.addLiquidShortcode("thumbnail", thumbnail);
 
   eleventyConfig.addPlugin(eleventySass, {
     sass: {
