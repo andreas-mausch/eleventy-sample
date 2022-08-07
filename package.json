@@ -10,6 +10,7 @@
   "devDependencies": {
     "@11ty/eleventy": "2.0.0-canary.14",
     "@swc/core": "1.2.224",
+    "eleventy-sass": "2.1.0",
     "rimraf": "3.0.2"
   }
 }

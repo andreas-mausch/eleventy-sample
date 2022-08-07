@@ -1,3 +1,4 @@
+const eleventySass = require("eleventy-sass");
 const fs = require('fs');
 const fsPromises = require('fs/promises');
 const path = require('path');
@@ -9,6 +10,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias("page", "layouts/page.njk");
   eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
 
+  eleventyConfig.addPlugin(eleventySass);
   eleventyConfig.addPlugin((eleventyConfig, options = {}) => {
     eleventyConfig.addWatchTarget("./scripts/**/*.ts");
 
