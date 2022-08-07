@@ -1,5 +1,6 @@
 const fs = require('fs');
 const fsPromises = require('fs/promises');
+const path = require('path');
 const swc = require('@swc/core');
 
 module.exports = function (eleventyConfig) {
@@ -9,18 +10,18 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
 
   eleventyConfig.addPlugin((eleventyConfig, options = {}) => {
-    eleventyConfig.addWatchTarget("scripts/**/*.ts");
+    eleventyConfig.addWatchTarget("./scripts/**/*.ts");
 
     eleventyConfig.on('eleventy.before', async () => {
-      if (!fs.existsSync("_site/scripts")) {
-        await fsPromises.mkdir("_site/scripts", { recursive: true });
+      if (!fs.existsSync(path.join(eleventyConfig.dir.output, "scripts"))) {
+        await fsPromises.mkdir(path.join(eleventyConfig.dir.output, "scripts"), { recursive: true });
       }
 
-      // TODO: Don't hardcord "_site" directory. Get it from eleventy instead.
-      console.log("Writing ", "_site/scripts/index.js");
-      const output = await swc.transformFile("scripts/index.ts")
+      const outputFile = path.join(eleventyConfig.dir.output, "scripts", "index.js")
+      console.log("Writing", outputFile, "from ./scripts/index.ts");
+      const output = await swc.transformFile("./scripts/index.ts")
         .then(js => swc.minify(js));
-      await fsPromises.writeFile("_site/scripts/index.js", output.code);
+      await fsPromises.writeFile(path.join(eleventyConfig.dir.output, "scripts", "index.js"), output.code);
     });
   });
 };
