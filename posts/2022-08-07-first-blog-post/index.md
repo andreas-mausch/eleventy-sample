@@ -8,3 +8,5 @@ layout: page
 ---
 
 This is the Markdown content of my first blog post.
+
+![Image](image.jpg)
