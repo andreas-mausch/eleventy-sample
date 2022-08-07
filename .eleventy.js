@@ -15,17 +15,28 @@ const typescriptPlugin = (eleventyConfig, options = {}) => {
       }
 
       return async (data) => {
-        const compiled = await swc.transform(content, {
-          "jsc": {
-            "parser": {
-              "syntax": "typescript",
-              "tsx": false,
-              "decorators": false,
-              "dynamicImport": false
-            }
-          }
+        const compiled = await swc.bundle({
+          entry: {
+            build: path.join(__dirname, inputPath)
+          },
+          output: {
+            path: path.join(__dirname, "scripts"),
+            name: parsed.base,
+          },
+          options: {
+            jsc: {
+              target: "es5",
+              parser: {
+                syntax: "typescript",
+              },
+            },
+            env: {
+              // path to package.json which includes browserslist field
+              path: ".",
+            },
+          },
         })
-          .then(js => swc.minify(js))
+          .then(output => swc.minify(output.build.code))
         return compiled.code
       }
     }
