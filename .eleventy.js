@@ -49,6 +49,12 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias("page", "layouts/page.njk");
   eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
 
-  eleventyConfig.addPlugin(eleventySass);
+  eleventyConfig.addPlugin(eleventySass, {
+    sass: {
+      style: "compressed",
+      sourceMap: false,
+      loadPaths: ["node_modules"]
+    }
+  });
   eleventyConfig.addPlugin(typescriptPlugin);
 };
