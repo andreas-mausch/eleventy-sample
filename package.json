@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "eleventy --serve",
-    "build": "eleventy",
-    "build:production": "ELEVENTY_ENV=production eleventy",
+    "build": "ELEVENTY_ENV=production eleventy",
     "lint": "eslint --ignore-pattern !.eleventy.js ./.eleventy.js ./scripts/**/*.ts",
     "check": "tsc",
     "clean": "rimraf ./_site/"
