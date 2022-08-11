@@ -5,7 +5,7 @@
     "dev": "eleventy --serve",
     "build": "eleventy",
     "build:production": "ELEVENTY_ENV=production eleventy",
-    "lint": "eslint ./scripts/**/*.ts",
+    "lint": "eslint --ignore-pattern !.eleventy.js ./.eleventy.js ./scripts/**/*.ts",
     "clean": "rimraf ./_site/"
   },
   "license": "MIT",
