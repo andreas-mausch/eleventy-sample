@@ -4,14 +4,15 @@
   "scripts": {
     "dev": "eleventy --serve",
     "build": "eleventy",
+    "build:production": "ELEVENTY_ENV=production eleventy",
     "clean": "rimraf ./_site/"
   },
   "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "2.0.0-canary.14",
     "@11ty/eleventy-img": "2.0.1",
-    "@swc/core": "1.2.224",
     "eleventy-sass": "2.1.0",
+    "esbuild": "0.15.1",
     "rimraf": "3.0.2"
   },
   "dependencies": {

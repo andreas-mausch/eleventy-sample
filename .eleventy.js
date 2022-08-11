@@ -1,9 +1,9 @@
+const esbuild = require("esbuild");
 const eleventySass = require("eleventy-sass");
-const fs = require('fs');
-const fsPromises = require('fs/promises');
 const image = require("@11ty/eleventy-img");
 const path = require('path');
-const swc = require('@swc/core');
+
+const isProduction = () => process.env.ELEVENTY_ENV === "production";
 
 const typescriptPlugin = (eleventyConfig, options = {}) => {
   eleventyConfig.addTemplateFormats("ts");
@@ -16,29 +16,15 @@ const typescriptPlugin = (eleventyConfig, options = {}) => {
       }
 
       return async (data) => {
-        const compiled = await swc.bundle({
-          entry: {
-            build: path.join(__dirname, inputPath)
-          },
-          output: {
-            path: path.join(__dirname, "scripts"),
-            name: parsed.base,
-          },
-          options: {
-            jsc: {
-              target: "es5",
-              parser: {
-                syntax: "typescript",
-              },
-            },
-            env: {
-              // path to package.json which includes browserslist field
-              path: ".",
-            },
-          },
+        const compiled = await esbuild.build({
+          entryPoints: [path.join(__dirname, inputPath)],
+          bundle: true,
+          minify: isProduction(),
+          sourcemap: !isProduction(),
+          legalComments: 'none',
+          write: false
         })
-          .then(output => swc.minify(output.build.code))
-        return compiled.code
+        return compiled.outputFiles[0].text
       }
     }
   });
