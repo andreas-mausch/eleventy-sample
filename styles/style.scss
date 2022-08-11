@@ -1,7 +1,27 @@
 @use "toastify-js/src/toastify.css";
 
 $background-color: #dddddd;
+$brand-color: #2a7ae2;
 
 body {
   background-color: $background-color;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12pt;
+}
+
+.postlist {
+  padding-left: 0;
+}
+
+.postlist-item {
+  list-style-type: none;
+
+  a {
+    color: $brand-color;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
