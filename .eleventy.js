@@ -8,6 +8,10 @@ const path = require("path")
 
 const isProduction = () => process.env.ELEVENTY_ENV === "production"
 const thumbnailWidth = 300
+// Unfortunately, this is needed because there is no other way to access the pathPrefix passed on the CLI
+// See here: https://github.com/11ty/eleventy-img/issues/44
+// And here: https://github.com/11ty/eleventy/issues/1641
+const getPathPrefix = () => process.env.ELEVENTY_PATH_PREFIX || ""
 
 const typescriptPlugin = (eleventyConfig, _options = {}) => {
   eleventyConfig.addTemplateFormats("ts")
@@ -40,7 +44,7 @@ const typescriptPlugin = (eleventyConfig, _options = {}) => {
 const imageMetadata = async src => await image(src, {
   widths: [null, thumbnailWidth],
   formats: ["jpeg"],
-  urlPath: "/images/",
+  urlPath: `${getPathPrefix()}/images/`,
   outputDir: "./_site/images/",
   filenameFormat: function (hash, src, width, format, _options) {
     const { name } = path.parse(src)
