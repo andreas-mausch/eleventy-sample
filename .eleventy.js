@@ -34,7 +34,7 @@ const typescriptPlugin = (eleventyConfig, _options = {}) => {
   })
 }
 
-const imageMetadata = async (src) => await image(src, {
+const imageMetadata = async src => await image(src, {
   widths: [null, thumbnailWidth],
   formats: ["jpeg"],
   urlPath: "/images/",
