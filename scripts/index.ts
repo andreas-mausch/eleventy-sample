@@ -1,4 +1,4 @@
-import Toastify from 'toastify-js'
+import Toastify from "toastify-js"
 
 window.showToast = () => {
   Toastify({
@@ -6,5 +6,5 @@ window.showToast = () => {
     duration: 3000,
     gravity: "top", // `top` or `bottom`
     position: "left", // `left`, `center` or `right`
-  }).showToast();
+  }).showToast()
 }

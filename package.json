@@ -5,14 +5,18 @@
     "dev": "eleventy --serve",
     "build": "eleventy",
     "build:production": "ELEVENTY_ENV=production eleventy",
+    "lint": "eslint ./scripts/**/*.ts",
     "clean": "rimraf ./_site/"
   },
   "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "2.0.0-canary.14",
     "@11ty/eleventy-img": "2.0.1",
+    "@typescript-eslint/eslint-plugin": "5.33.0",
+    "@typescript-eslint/parser": "5.33.0",
     "eleventy-sass": "2.1.0",
     "esbuild": "0.15.1",
+    "eslint": "8.21.0",
     "rimraf": "3.0.2"
   },
   "dependencies": {
