@@ -29,5 +29,11 @@ npm run dev
 ## Production build
 
 ```
-npm run build
+npm run build:production
+```
+
+## Linting
+
+```
+npm run lint
 ```
