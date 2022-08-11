@@ -21,7 +21,7 @@ jobs:
           npm ci
           npm run lint
           npm run check
-          npm run build
+          npm run build -- --pathprefix=eleventy-sample
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
