@@ -6,18 +6,21 @@
     "build": "eleventy",
     "build:production": "ELEVENTY_ENV=production eleventy",
     "lint": "eslint --ignore-pattern !.eleventy.js ./.eleventy.js ./scripts/**/*.ts",
+    "check": "tsc",
     "clean": "rimraf ./_site/"
   },
   "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "2.0.0-canary.14",
     "@11ty/eleventy-img": "2.0.1",
+    "@types/toastify-js": "1.11.1",
     "@typescript-eslint/eslint-plugin": "5.33.0",
     "@typescript-eslint/parser": "5.33.0",
     "eleventy-sass": "2.1.0",
     "esbuild": "0.15.1",
     "eslint": "8.21.0",
-    "rimraf": "3.0.2"
+    "rimraf": "3.0.2",
+    "typescript": "4.7.4"
   },
   "dependencies": {
     "toastify-js": "1.12.0"

@@ -18,6 +18,9 @@ const typescriptPlugin = (eleventyConfig, _options = {}) => {
       if (parsed.name.startsWith("_")) {
         return
       }
+      if (inputPath.endsWith(".d.ts")) {
+        return
+      }
 
       return async _data => {
         const compiled = await esbuild.build({
