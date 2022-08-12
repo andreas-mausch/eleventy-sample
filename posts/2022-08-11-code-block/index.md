@@ -7,6 +7,7 @@ This is a code block:
 
 ```
 Some generic code
+Some very long line, which shouldn't cause horizontal scrolling on mobile.
 ```
 
 ```java
