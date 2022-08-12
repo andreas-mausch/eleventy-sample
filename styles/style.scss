@@ -1,6 +1,6 @@
 @use "toastify-js/src/toastify.css";
 
-$background-color: #dddddd;
+$background-color: #ddd;
 $brand-color: #2a7ae2;
 
 body {
@@ -10,10 +10,10 @@ body {
 }
 
 img {
-  max-width: 100%;
-  width: auto;
   height: auto;
+  max-width: 100%;
   object-fit: contain;
+  width: auto;
 }
 
 .postlist {
