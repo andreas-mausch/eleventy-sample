@@ -10,6 +10,8 @@ Some generic code
 Some very long line, which shouldn't cause horizontal scrolling on mobile.
 ```
 
+This is a normal paragraph with `some very long inline code command, which should also not cause horizontal scrolling`.
+
 ```java
 public class MyClass {
   public static void main(String[] args) {
