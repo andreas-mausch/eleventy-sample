@@ -1,6 +1,6 @@
 ---
 title: Code Block Example
-date: 2022-08-11
+date: 2022-08-11T20:00:00+02:00
 ---
 
 This is a code block:

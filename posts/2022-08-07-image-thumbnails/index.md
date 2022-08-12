@@ -1,6 +1,6 @@
 ---
 title: Image Thumbnails
-date: 2022-08-07
+date: 2022-08-07T20:00:00+02:00
 ---
 
 Image embedded via shortcode
