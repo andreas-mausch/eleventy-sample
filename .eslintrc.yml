@@ -31,3 +31,9 @@ rules:
     - argsIgnorePattern: ^_
       varsIgnorePattern: ^_
       caughtErrorsIgnorePattern: ^_
+overrides:
+  - files: [".eleventy.js", "eleventy/*.js" ]
+    env:
+      node: true
+    rules:
+      "@typescript-eslint/no-var-requires": "off"

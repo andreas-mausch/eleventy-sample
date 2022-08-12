@@ -1,6 +1,3 @@
-/* eslint-env node */
-/* eslint-disable @typescript-eslint/no-var-requires */
-
 const esbuild = require("esbuild")
 const eleventySass = require("eleventy-sass")
 const image = require("@11ty/eleventy-img")
