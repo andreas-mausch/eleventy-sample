@@ -10,7 +10,7 @@ layout: page
         <div>
             <a href="{{ post.url | url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
         </div>
-        <time class="postlist-date" datetime="{{ post.date }}">{{ post.date }}</time>
+        <time class="postlist-date" datetime="{{ post.date | isoDateTime }}">{{ post.date | isoDate }}</time>
     </li>
     {% endfor %}
 </ol>
