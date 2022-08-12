@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "eleventy --serve",
     "build": "ELEVENTY_ENV=production eleventy",
-    "lint": "eslint --ignore-pattern !.eleventy.js ./.eleventy.js ./scripts/**/*.ts",
+    "lint": "eslint --ignore-pattern !.eleventy.js ./.eleventy.js ./eleventy/**/*.js ./scripts/**/*.ts",
     "check": "tsc",
     "clean": "rimraf ./_site/"
   },

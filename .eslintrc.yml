@@ -26,6 +26,13 @@ rules:
   arrow-parens:
     - error
     - as-needed
+  arrow-spacing:
+    - error
+  space-before-function-paren:
+    - error
+    - anonymous: always
+      named: never
+      asyncArrow: always
   "@typescript-eslint/no-unused-vars":
     - error
     - argsIgnorePattern: ^_
