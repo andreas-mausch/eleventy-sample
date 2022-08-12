@@ -1,4 +1,6 @@
 @use "toastify-js/src/toastify.css";
+@use "prism-themes/themes/prism-dracula.css";
+@use "_code.scss";
 
 $background-color: #ddd;
 $brand-color: #2a7ae2;
