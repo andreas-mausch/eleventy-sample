@@ -43,3 +43,11 @@ npm run lint
 ```
 npm run check
 ```
+
+## Pre-commit hook
+
+Linting and type checking is also done by the npm package `pre-commit`.
+It does this checks when a git commit is triggered.
+
+You can bypass the checks by passing `--no-verify` to git commit.
+See [here](https://github.com/observing/pre-commit).

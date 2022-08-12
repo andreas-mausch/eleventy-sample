@@ -18,10 +18,12 @@
     "eleventy-sass": "2.1.0",
     "esbuild": "0.15.1",
     "eslint": "8.21.0",
+    "pre-commit": "1.2.2",
     "rimraf": "3.0.2",
     "typescript": "4.7.4"
   },
   "dependencies": {
     "toastify-js": "1.12.0"
-  }
+  },
+  "pre-commit": ["lint", "check"]
 }
