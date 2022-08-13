@@ -1,12 +1,15 @@
 const eleventySass = require("eleventy-sass")
 const dates = require("./eleventy/dates")
 const imageShortcodes = require("./eleventy/images")
+const markdownIt = require("./eleventy/markdown")
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
 const typescriptPlugin = require("./eleventy/typescript-esbuild")
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias("page", "layouts/page.njk")
   eleventyConfig.addLayoutAlias("post", "layouts/post.njk")
+
+  eleventyConfig.setLibrary("md", markdownIt)
 
   eleventyConfig.addFilter("date", dates.date)
   eleventyConfig.addFilter("isoDate", dates.isoDate)
