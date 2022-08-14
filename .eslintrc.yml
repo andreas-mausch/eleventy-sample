@@ -18,6 +18,8 @@ rules:
   arrow-parens: ["error", "as-needed"]
   arrow-spacing: error
   comma-dangle: ["error", "never"]
+  space-in-parens: ["error", "never"]
+  array-bracket-spacing: ["error", "never"]
   space-before-function-paren:
     - error
     - anonymous: always
