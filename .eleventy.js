@@ -2,7 +2,6 @@ const eleventySass = require("eleventy-sass")
 const dates = require("./eleventy/dates")
 const imageShortcodes = require("./eleventy/images")
 const markdownIt = require("./eleventy/markdown")
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
 const typescriptPlugin = require("./eleventy/typescript-esbuild")
 
 module.exports = function (eleventyConfig) {
@@ -24,9 +23,6 @@ module.exports = function (eleventyConfig) {
       sourceMap: false,
       loadPaths: ["node_modules"]
     }
-  })
-  eleventyConfig.addPlugin(syntaxHighlight, {
-    alwaysWrapLineHighlights: true
   })
   eleventyConfig.addPlugin(typescriptPlugin)
 }
