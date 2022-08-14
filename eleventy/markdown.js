@@ -2,7 +2,7 @@ const markdownIt = require("markdown-it")
 const markdownItAnchor = require("markdown-it-anchor")
 
 const markdown = markdownIt({
-  html: true,
+  html: true
 }).use(markdownItAnchor)
 
 // Unfortunately, inline code blocks are not processed by default, so we need this.

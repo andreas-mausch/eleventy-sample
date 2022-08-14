@@ -36,7 +36,7 @@ async function imageShortcode(src, alt, sizes = "(min-width: 30em) 50vw, 100vw")
     alt,
     sizes,
     loading: "lazy",
-    decoding: "async",
+    decoding: "async"
   }
 
   return image.generateHTML(metadata, imageAttributes)

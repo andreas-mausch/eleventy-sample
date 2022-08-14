@@ -17,6 +17,7 @@ rules:
   semi: ["error", "never"]
   arrow-parens: ["error", "as-needed"]
   arrow-spacing: error
+  comma-dangle: ["error", "never"]
   space-before-function-paren:
     - error
     - anonymous: always
