@@ -16,6 +16,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addLiquidShortcode("image", imageShortcodes.imageShortcode)
   eleventyConfig.addLiquidShortcode("thumbnail", imageShortcodes.thumbnail)
+  eleventyConfig.addLiquidShortcode("clickableThumbnail", imageShortcodes.clickableThumbnail)
 
   eleventyConfig.addPlugin(eleventySass, {
     sass: {

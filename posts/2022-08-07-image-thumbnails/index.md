@@ -9,6 +9,7 @@ Image 1
 
 {% image "image1.jpg", "Image1 via thumbnail" %}
 {% thumbnail "image1.jpg", "Image1 via thumbnail" %}
+{% clickableThumbnail "image1.jpg", "Image1 via thumbnail" %}
 
 Image 2
 
