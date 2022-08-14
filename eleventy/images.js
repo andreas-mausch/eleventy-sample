@@ -21,12 +21,15 @@ const imageMetadata = async src => await image(src, {
 async function thumbnail(src, alt) {
   const metadata = await imageMetadata(path.join(path.parse(this.page.inputPath).dir, src))
 
-  const imgSrc = metadata.jpeg
+  const thumbnail = metadata.jpeg
     ?.filter(img => img.width <= thumbnailWidth)
     ?.sort((img1, img2) => img2.width - img1.width)
     .find(() => true)
-    ?.url
-  return `<img src="${imgSrc}" alt="${alt}">`
+
+  if (!thumbnail) {
+    return
+  }
+  return `<img src="${thumbnail?.url}" alt="${alt}" width="${thumbnail?.width}" height="${thumbnail.height}">`
 }
 
 async function imageShortcode(src, alt, sizes = "(min-width: 30em) 50vw, 100vw") {
