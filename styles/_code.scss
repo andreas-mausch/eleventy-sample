@@ -1,5 +1,11 @@
+@use "prism-themes/themes/prism-dracula.css";
+
 pre {
   counter-reset: lineNumber;
+}
+
+pre > code[class*="language-"],
+code[class*="language-"] {
   font-size: 9pt;
 }
 
@@ -7,7 +13,7 @@ pre[class*="language-"] {
   padding: 0.5em;
 }
 
-code .highlight-line::before {
+pre > code[class*="language-"] .highlight-line::before {
   border-right: 1px solid #404040;
   color: #858585;
   content: counter(lineNumber);
