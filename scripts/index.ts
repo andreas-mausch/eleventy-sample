@@ -1,5 +1,6 @@
 import Toastify from "toastify-js"
 import { swiffyslider } from "swiffy-slider"
+import "img-comparison-slider/dist/index"
 
 window.showToast = () => {
   Toastify({
