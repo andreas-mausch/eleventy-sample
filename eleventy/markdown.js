@@ -1,10 +1,12 @@
 const markdownIt = require("markdown-it")
 const markdownItAnchor = require("markdown-it-anchor")
 const prism = require("markdown-it-prism")
+const hierarchy = require("markdown-it-hierarchy")
 
 const markdown = markdownIt({
   html: true
-}).use(markdownItAnchor)
+}).use(hierarchy)
+  .use(markdownItAnchor)
   .use(prism, { defaultLanguage: "plain" })
 
 // Unfortunately, inline code blocks are not processed by default, so we need this.
