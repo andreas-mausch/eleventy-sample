@@ -35,10 +35,17 @@ img {
   }
 }
 
+.toc {
+  border: 1px solid #a2a9b1;
+  font-size: 11pt;
+  padding: 7px;
+}
+
 .toc ol {
   list-style-type: none;
 }
 
 .toc > ol {
-  padding-left: 0;
+  margin: 0;
+  padding: 0;
 }
