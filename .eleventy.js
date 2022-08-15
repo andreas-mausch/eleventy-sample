@@ -14,6 +14,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("date", dates.date)
   eleventyConfig.addFilter("isoDate", dates.isoDate)
   eleventyConfig.addFilter("isoDateTime", dates.isoDateTime)
+  eleventyConfig.addFilter("carousel", imageShortcodes.carousel)
 
   eleventyConfig.addLiquidShortcode("image", imageShortcodes.imageShortcode)
   eleventyConfig.addLiquidShortcode("imageUrl", imageShortcodes.imageUrl)
