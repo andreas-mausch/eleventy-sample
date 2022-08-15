@@ -5,9 +5,13 @@
 }
 
 .image-comparison-slider-handle {
-  transition: transform 0.2s;
+  transition: transform 0.2s, opacity 1s;
 }
 
 .image-comparison-slider > img-comparison-slider:hover .image-comparison-slider-handle {
   transform: scale(1.25);
+}
+
+.image-comparison-slider > img-comparison-slider:focus .image-comparison-slider-handle {
+  opacity: 0;
 }
