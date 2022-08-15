@@ -38,3 +38,7 @@ img {
 .toc ol {
   list-style-type: none;
 }
+
+.toc > ol {
+  padding-left: 0;
+}

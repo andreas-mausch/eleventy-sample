@@ -27,6 +27,8 @@ module.exports = function (eleventyConfig) {
       loadPaths: ["node_modules"]
     }
   })
-  eleventyConfig.addPlugin(tableOfContents)
+  eleventyConfig.addPlugin(tableOfContents, {
+    tags: ["h1", "h2", "h3", "h4", "h5"]
+  })
   eleventyConfig.addPlugin(typescriptPlugin)
 }
