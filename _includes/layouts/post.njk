@@ -6,4 +6,10 @@ layout: page
 
 <h1>This is a blog post</h1>
 
+{% if content | toc %}
+  <aside>
+    {{ content | toc | safe }}
+  </aside>
+{% endif %}
+
 {{ content | safe }}

@@ -2,6 +2,7 @@ const eleventySass = require("eleventy-sass")
 const dates = require("./eleventy/dates")
 const imageShortcodes = require("./eleventy/images")
 const markdownIt = require("./eleventy/markdown")
+const tableOfContents = require("eleventy-plugin-toc")
 const typescriptPlugin = require("./eleventy/typescript-esbuild")
 
 module.exports = function (eleventyConfig) {
@@ -26,5 +27,6 @@ module.exports = function (eleventyConfig) {
       loadPaths: ["node_modules"]
     }
   })
+  eleventyConfig.addPlugin(tableOfContents)
   eleventyConfig.addPlugin(typescriptPlugin)
 }
