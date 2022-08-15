@@ -21,6 +21,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLiquidShortcode("thumbnail", imageShortcodes.thumbnail)
   eleventyConfig.addLiquidShortcode("clickableThumbnail", imageShortcodes.clickableThumbnail)
   eleventyConfig.addLiquidShortcode("carousel", imageShortcodes.carousel)
+  eleventyConfig.addLiquidShortcode("image-comparison", imageShortcodes.comparison)
 
   eleventyConfig.addPlugin(eleventySass, {
     sass: {
