@@ -65,7 +65,7 @@ async function imageShortcode(src, alt, sizes = "(min-width: 30em) 50vw, 100vw")
 }
 
 async function carousel(srcs) {
-  let slider = "<div class=\"swiffy-slider slider-indicators-sm\">"
+  let slider = "<div class=\"swiffy-slider slider-indicators-sm slider-indicators-dark slider-indicators-outside slider-indicators-round slider-indicators-highlight slider-nav-dark slider-nav-chevron slider-item-ratio-contain\">"
   slider += "<ul class=\"slider-container\">"
   for await (const thumbnail of srcs.map(src => clickableThumbnail(src, "Slider image", this.page))) {
     slider += `<li>${thumbnail}</li>`
