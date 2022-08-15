@@ -1,0 +1,13 @@
+.image-comparison-slider {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.image-comparison-slider-handle {
+  transition: transform 0.2s;
+}
+
+.image-comparison-slider > img-comparison-slider:hover .image-comparison-slider-handle {
+  transform: scale(1.25);
+}
