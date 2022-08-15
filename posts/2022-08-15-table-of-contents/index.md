@@ -1,6 +1,7 @@
 ---
 title: Table of Contents
 date: 2022-08-15T11:00:00+02:00
+toc: true
 ---
 
 # Heading 1

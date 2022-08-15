@@ -8,7 +8,7 @@ layout: page
 
 <h2>{{ title | safe }}</h2>
 
-{% if content | toc %}
+{% if toc and content | toc %}
   <aside>
     {{ content | toc | safe }}
   </aside>
