@@ -13,6 +13,5 @@ window.showToast = () => {
 window.swiffyslider = swiffyslider
 
 window.addEventListener("load", () => {
-  // @ts-expect-error: swiffyslider doesn't declare types
   window.swiffyslider.init()
 })
