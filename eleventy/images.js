@@ -45,12 +45,13 @@ async function thumbnail(src, alt, page = this.page) {
 }
 
 async function imageUrl(src, page = this.page) {
-  return findImage(src, page)?.url
+  const image = await findImage(src, page)
+  return image.url
 }
 
 async function clickableThumbnail(src, alt, page = this.page) {
   const img = await thumbnail(src, alt, page)
-  const largestImageUrl = imageUrl(src, page)
+  const largestImageUrl = await imageUrl(src, page)
   return `<a href="${largestImageUrl}" target="_blank">${img}</a>`
 }
 
