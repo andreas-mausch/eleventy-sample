@@ -17,11 +17,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("carousel", imageShortcodes.carousel)
 
   eleventyConfig.addLiquidShortcode("image", imageShortcodes.imageShortcode)
-  eleventyConfig.addLiquidShortcode("imageUrl", imageShortcodes.imageUrl)
-  eleventyConfig.addLiquidShortcode("thumbnail", imageShortcodes.thumbnail)
-  eleventyConfig.addLiquidShortcode("clickableThumbnail", imageShortcodes.clickableThumbnail)
-  eleventyConfig.addLiquidShortcode("carousel", imageShortcodes.carousel)
+  eleventyConfig.addLiquidShortcode("image-url", imageShortcodes.imageUrl)
   eleventyConfig.addLiquidShortcode("image-comparison", imageShortcodes.comparison)
+  eleventyConfig.addLiquidShortcode("thumbnail", imageShortcodes.thumbnail)
+  eleventyConfig.addLiquidShortcode("thumbnail-clickable", imageShortcodes.clickableThumbnail)
+  eleventyConfig.addLiquidShortcode("carousel", imageShortcodes.carousel)
 
   eleventyConfig.addPlugin(eleventySass, {
     sass: {

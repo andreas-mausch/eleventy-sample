@@ -12,7 +12,7 @@ date: 2022-08-07T20:00:00+02:00
 
 ## Clickable thumbnail of Image 1 (opens in new tab)
 
-{% clickableThumbnail "image1.jpg", "Image1 via thumbnail" %}
+{% thumbnail-clickable "image1.jpg", "Image1 via thumbnail" %}
 
 # Image 2
 
