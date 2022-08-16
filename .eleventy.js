@@ -1,6 +1,7 @@
 const eleventySass = require("eleventy-sass")
 const dates = require("./eleventy/dates")
 const imageShortcodes = require("./eleventy/images")
+const linkPost = require("./eleventy/link-post")
 const markdownIt = require("./eleventy/markdown")
 const tableOfContents = require("eleventy-plugin-toc")
 const typescriptPlugin = require("./eleventy/typescript-esbuild")
@@ -22,6 +23,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLiquidShortcode("thumbnail", imageShortcodes.thumbnail)
   eleventyConfig.addLiquidShortcode("thumbnail-clickable", imageShortcodes.clickableThumbnail)
   eleventyConfig.addLiquidShortcode("carousel", imageShortcodes.carousel)
+  eleventyConfig.addLiquidShortcode("link-post", linkPost)
 
   eleventyConfig.addPlugin(eleventySass, {
     sass: {
