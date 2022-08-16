@@ -1,3 +1,5 @@
+// Source: https://github.com/shytikov/markdown-it-hierarchy/blob/e9f453e94d851e06952cbf206772a89c4df985f5/index.js
+
 // Plugin that adds hierarchy numbering to headers, like "1. XXX", "1.2 YYY" etc
 //
 // Theory of operation:
