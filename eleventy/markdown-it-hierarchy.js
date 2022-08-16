@@ -27,11 +27,6 @@ let generateHierarchicalText = function (accumulator, level) {
 }
 
 let hierarchy = function (md, _opts) {
-  let accumulator = {}
-  let last = ""
-  let hierarchyTextOutput = ""
-  let waitingForObject = null
-
   // Store the previous rules so we can call the previous rules. This allows
   // us to insert ourselves without disrupting other plugins that are also
   // attaching to the same rules
@@ -41,19 +36,26 @@ let hierarchy = function (md, _opts) {
   md.renderer.rules.heading_open = function (tokens, idx, options, env, self) {
     let level = tokens[idx].tag
 
-    if (last < level) {
-      accumulator[level] = 1
-    } else {
-      accumulator[level]++
+    if (!env.hierarchy) {
+      env.hierarchy = {
+        accumulator: [],
+        hierarchyTextOutput: "",
+        lastLevel: null,
+        waitingForObject: null
+      }
     }
 
-    last = level
+    if (!env.hierarchy.lastLevel || (env.hierarchy.lastLevel < level)) {
+      env.hierarchy.accumulator[level] = 1
+    } else {
+      env.hierarchy.accumulator[level]++
+    }
 
-    hierarchyTextOutput = generateHierarchicalText(accumulator, level)
-
+    env.hierarchy.lastLevel = level
+    env.hierarchy.hierarchyTextOutput = generateHierarchicalText(env.hierarchy.accumulator, level)
     // store the object that the text rule will look to modify when the rules engine
     // gets to that point
-    waitingForObject = tokens[idx + 1].children[0]
+    env.hierarchy.waitingForObject = tokens[idx + 1].children[0]
 
     // call the previous rule if one was found or the default rule if none was found
     // this reduces the chance of conflict with other plugins
@@ -71,8 +73,8 @@ let hierarchy = function (md, _opts) {
     const originalContent = tokens[idx].content
 
     // if this is the token we should be altering, alter its content
-    if (tokens[idx] === waitingForObject) {
-      tokens[idx].content = hierarchyTextOutput + originalContent
+    if (tokens[idx] === env.hierarchy?.waitingForObject) {
+      tokens[idx].content = env.hierarchy.hierarchyTextOutput + originalContent
     }
 
     // call the previous rule if one was found or the default rule if none was found
