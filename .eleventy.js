@@ -23,7 +23,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLiquidShortcode("thumbnail", imageShortcodes.thumbnail)
   eleventyConfig.addLiquidShortcode("thumbnail-clickable", imageShortcodes.clickableThumbnail)
   eleventyConfig.addLiquidShortcode("carousel", imageShortcodes.carousel)
-  eleventyConfig.addLiquidShortcode("link-post", linkPost)
+  eleventyConfig.addPlugin(linkPost)
 
   eleventyConfig.addPlugin(eleventySass, {
     sass: {
