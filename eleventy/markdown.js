@@ -1,11 +1,13 @@
 const markdownIt = require("markdown-it")
 const markdownItAnchor = require("markdown-it-anchor")
+const externalLinks = require("markdown-it-external-links")
 const prism = require("markdown-it-prism")
 const hierarchy = require("./markdown-it-hierarchy")
 
 const markdown = markdownIt({
   html: true
 }).use(hierarchy)
+  .use(externalLinks)
   .use(markdownItAnchor)
   .use(prism, { defaultLanguage: "plain" })
 
