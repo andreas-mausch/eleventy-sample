@@ -1,5 +1,6 @@
 const eleventySass = require("eleventy-sass")
 const dates = require("./eleventy/dates")
+const emoji = require("eleventy-plugin-emoji")
 const imageShortcodes = require("./eleventy/images")
 const linkPost = require("./eleventy/link-post")
 const markdownIt = require("./eleventy/markdown")
@@ -32,6 +33,7 @@ module.exports = function (eleventyConfig) {
       loadPaths: ["node_modules"]
     }
   })
+  eleventyConfig.addPlugin(emoji)
   eleventyConfig.addPlugin(tableOfContents, {
     tags: ["h1", "h2", "h3", "h4", "h5"]
   })
