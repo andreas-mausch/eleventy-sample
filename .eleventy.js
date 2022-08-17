@@ -2,12 +2,15 @@ const eleventySass = require("eleventy-sass")
 const dates = require("./eleventy/dates")
 const emoji = require("eleventy-plugin-emoji")
 const imageShortcodes = require("./eleventy/images")
+const katex = require("katex")
 const linkPost = require("./eleventy/link-post")
 const markdownIt = require("./eleventy/markdown")
 const tableOfContents = require("eleventy-plugin-toc")
 const typescriptPlugin = require("./eleventy/typescript-esbuild")
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addPassthroughCopy({ "node_modules/katex/dist/fonts": "styles/fonts" })
+
   eleventyConfig.addLayoutAlias("page", "layouts/page.njk")
   eleventyConfig.addLayoutAlias("post", "layouts/post.njk")
 
@@ -17,6 +20,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("isoDate", dates.isoDate)
   eleventyConfig.addFilter("isoDateTime", dates.isoDateTime)
   eleventyConfig.addFilter("carousel", imageShortcodes.carousel)
+  eleventyConfig.addFilter("katex", text => katex.renderToString(text, { throwOnError: false }))
 
   eleventyConfig.addLiquidShortcode("image", imageShortcodes.imageShortcode)
   eleventyConfig.addLiquidShortcode("image-url", imageShortcodes.imageUrl)
