@@ -2,6 +2,7 @@ const markdownIt = require("markdown-it")
 const anchor = require("markdown-it-anchor")
 const externalLinks = require("markdown-it-external-links")
 const prism = require("markdown-it-prism")
+const lineNumbers = require("./markdown-it-prism-line-numbers")
 const hierarchy = require("./markdown-it-hierarchy")
 
 const markdown = markdownIt({
@@ -20,5 +21,7 @@ markdown.renderer.rules.code_inline = (tokens, idx, { langPrefix = "" }) => {
   const token = tokens[idx]
   return `<code class="${langPrefix}">${token.content}</code>`
 }
+
+markdown.options.highlight = lineNumbers(markdown.options.highlight)
 
 module.exports = markdown
