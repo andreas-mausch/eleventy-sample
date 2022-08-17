@@ -6,5 +6,20 @@ pre[class*="language-"] {
 
 pre>code[class*="language-"],
 code[class*="language-"] {
+  counter-reset: lineNumber;
   font-size: 9pt;
+}
+
+code[class*="language-"] .highlight-line::before {
+  border-right: 1px solid #404040;
+  color: #858585;
+  content: counter(lineNumber);
+  counter-increment: lineNumber;
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+  margin-right: 0.6em;
+  padding-right: 0.6em;
+  text-align: right;
+  user-select: none;
+  width: 1.4em;
 }
