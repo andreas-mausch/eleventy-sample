@@ -9,7 +9,8 @@ const tableOfContents = require("eleventy-plugin-toc")
 const typescriptPlugin = require("./eleventy/typescript-esbuild")
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy({ "node_modules/katex/dist/fonts": "styles/fonts" })
+  eleventyConfig.addPassthroughCopy("favicon.svg",
+    { "node_modules/katex/dist/fonts": "styles/fonts" })
 
   eleventyConfig.addLayoutAlias("page", "layouts/page.njk")
   eleventyConfig.addLayoutAlias("post", "layouts/post.njk")
