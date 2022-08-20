@@ -3,14 +3,18 @@ title: Code Block Example
 date: 2022-08-11T20:00:00+02:00
 ---
 
-This is a code block:
+# Generic code block
 
 ```
 Some generic code
 Some very long line, which shouldn't cause horizontal scrolling on mobile.
 ```
 
+# Inline code
+
 This is a normal paragraph with `some very long inline code command, which should also not cause horizontal scrolling`.
+
+# Code block with language
 
 ```java
 public class Factorial {
@@ -34,4 +38,13 @@ fun main() {
 
 ```bash
 $ echo "This is a bash command"
+```
+
+# Code block with a filename
+
+```js {data-filename=test.js}
+const md = require('markdown-it')()
+const prism = require('markdown-it-prism')
+
+md.use(prism, options)
 ```

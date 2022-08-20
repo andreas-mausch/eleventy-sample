@@ -10,6 +10,17 @@ code[class*="language-"] {
   font-size: 9pt;
 }
 
+code[data-filename]::before {
+  color: #ccc;
+  content: attr(data-filename);
+  display: block;
+  font-family: courier, courier new, serif;
+  font-size: 11pt;
+  font-weight: 100;
+  padding-left: 0.6em;
+  user-select: none;
+}
+
 code[class*="language-"] .highlight-line::before {
   border-right: 1px solid #404040;
   color: #858585;
