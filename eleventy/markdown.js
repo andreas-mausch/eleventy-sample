@@ -4,6 +4,7 @@ const externalLinks = require("markdown-it-external-links")
 const prism = require("markdown-it-prism")
 const lineNumbers = require("./markdown-it-prism-line-numbers")
 const hierarchy = require("./markdown-it-hierarchy")
+const taskCheckbox = require("markdown-it-task-checkbox")
 
 const markdown = markdownIt({
   html: true
@@ -14,6 +15,7 @@ const markdown = markdownIt({
     placement: "after"
   }) })
   .use(prism, { defaultLanguage: "plain" })
+  .use(taskCheckbox)
 
 // Unfortunately, inline code blocks are not processed by default, so we need this.
 // Compare to https://github.com/11ty/eleventy-plugin-syntaxhighlight/issues/38#issuecomment-1022305948
