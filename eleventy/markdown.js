@@ -1,5 +1,6 @@
 const markdownIt = require("markdown-it")
 const anchor = require("markdown-it-anchor")
+const attrs = require("markdown-it-attrs")
 const externalLinks = require("markdown-it-external-links")
 const footnote = require("markdown-it-footnote")
 const prism = require("markdown-it-prism")
@@ -10,6 +11,7 @@ const hierarchy = require("./markdown-it-hierarchy")
 const markdown = markdownIt({
   html: true
 }).use(hierarchy)
+  .use(attrs)
   .use(externalLinks)
   .use(footnote)
   .use(anchor, { permalink: anchor.permalink.ariaHidden({
