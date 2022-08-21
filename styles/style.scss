@@ -94,17 +94,22 @@ kbd {
 }
 
 .quote {
-  background: #eee;
-  border-radius: 0.3em;
   margin: 0;
-  padding: 0.5em;
 }
 
-.quote blockquote,
-.quote figcaption {
+blockquote {
+  background: #eee;
+  border-radius: 0.5em;
+  font-family: Lucida Sans Typewriter, Lucida Console, monaco, Bitstream Vera Sans Mono, monospace;
+  font-size: 11pt;
+  padding: 0.3em 1em;
+}
+
+blockquote,
+figcaption {
   margin: 0.3em;
 }
 
-.quote figcaption {
+figcaption {
   font-style: italic;
 }
