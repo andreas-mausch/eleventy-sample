@@ -1,5 +1,6 @@
 const markdownIt = require("markdown-it")
 const anchor = require("markdown-it-anchor")
+const attribution = require("markdown-it-attribution")
 const attrs = require("markdown-it-attrs")
 const externalLinks = require("markdown-it-external-links")
 const footnote = require("markdown-it-footnote")
@@ -11,6 +12,12 @@ const hierarchy = require("./markdown-it-hierarchy")
 const markdown = markdownIt({
   html: true
 }).use(hierarchy)
+  .use(attribution, {
+    classNameContainer: "quote",
+    classNameAttribution: "quote-attribution",
+    marker: "--",
+    removeMarker: true
+  })
   .use(attrs)
   .use(externalLinks)
   .use(footnote)

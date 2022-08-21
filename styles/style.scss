@@ -92,3 +92,19 @@ kbd {
   border-radius: 2px;
   padding: 2px;
 }
+
+.quote {
+  background: #eee;
+  border-radius: 0.3em;
+  margin: 0;
+  padding: 0.5em;
+}
+
+.quote blockquote,
+.quote figcaption {
+  margin: 0.3em;
+}
+
+.quote figcaption {
+  font-style: italic;
+}
