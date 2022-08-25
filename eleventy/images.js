@@ -116,6 +116,7 @@ async function comparison(beforeName, afterName, page = this.page) {
 }
 
 module.exports = {
+  relativeFile,
   thumbnail,
   clickableThumbnail,
   imageShortcode,
