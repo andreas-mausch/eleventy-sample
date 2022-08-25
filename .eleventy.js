@@ -1,5 +1,6 @@
 const autoprefixer = require("autoprefixer")
 const dates = require("./eleventy/dates")
+const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output")
 const eleventySass = require("eleventy-sass")
 const emoji = require("eleventy-plugin-emoji")
 const imageShortcodes = require("./eleventy/images")
@@ -33,6 +34,15 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLiquidShortcode("carousel", imageShortcodes.carousel)
   eleventyConfig.addLiquidTag("link-post", linkPost)
 
+  eleventyConfig.setQuietMode(true)
+
+  eleventyConfig.addPlugin(directoryOutputPlugin, {
+    columns: {
+      filesize: true,
+      benchmark: true
+    },
+    warningFileSize: 50 * 1000
+  })
   eleventyConfig.addPlugin(eleventySass, {
     sass: {
       style: "compressed",
