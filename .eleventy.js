@@ -1,10 +1,12 @@
-const eleventySass = require("eleventy-sass")
+const autoprefixer = require("autoprefixer")
 const dates = require("./eleventy/dates")
+const eleventySass = require("eleventy-sass")
 const emoji = require("eleventy-plugin-emoji")
 const imageShortcodes = require("./eleventy/images")
 const katex = require("katex")
 const linkPost = require("./eleventy/link-post")
 const markdownIt = require("./eleventy/markdown")
+const postcss = require("postcss")
 const tableOfContents = require("eleventy-plugin-toc")
 const typescriptPlugin = require("./eleventy/typescript-esbuild")
 
@@ -36,7 +38,8 @@ module.exports = function (eleventyConfig) {
       style: "compressed",
       sourceMap: false,
       loadPaths: ["node_modules"]
-    }
+    },
+    postcss: postcss([autoprefixer])
   })
   eleventyConfig.addPlugin(emoji)
   eleventyConfig.addPlugin(tableOfContents, {
