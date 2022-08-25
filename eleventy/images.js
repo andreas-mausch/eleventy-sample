@@ -4,7 +4,7 @@ const path = require("path")
 
 const thumbnailWidth = 300
 
-const imageMetadata = async src => await image(src, {
+const imageMetadata = src => image.statsSync(src, {
   widths: [null, thumbnailWidth],
   formats: ["jpeg"],
   urlPath: `${getPathPrefix()}/images/`,
@@ -19,8 +19,8 @@ function relativeFile(src, page) {
   return path.join(path.parse(page.inputPath).dir, src)
 }
 
-async function findThumbnail(src, page = this.page) {
-  const metadata = await imageMetadata(relativeFile(src, page))
+function findThumbnail(src, page = this.page) {
+  const metadata = imageMetadata(relativeFile(src, page))
 
   return metadata.jpeg
     ?.filter(img => img.width <= thumbnailWidth)
@@ -28,16 +28,16 @@ async function findThumbnail(src, page = this.page) {
     .find(() => true)
 }
 
-async function findImage(src, page = this.page) {
-  const metadata = await imageMetadata(relativeFile(src, page))
+function findImage(src, page = this.page) {
+  const metadata = imageMetadata(relativeFile(src, page))
 
   return metadata.jpeg
     ?.sort((img1, img2) => img2.width - img1.width)
     .find(() => true)
 }
 
-async function thumbnail(src, alt, page = this.page) {
-  const thumbnail = await findThumbnail(src, page)
+function thumbnail(src, alt, page = this.page) {
+  const thumbnail = findThumbnail(src, page)
 
   if (!thumbnail) {
     return
@@ -45,19 +45,19 @@ async function thumbnail(src, alt, page = this.page) {
   return `<img src="${thumbnail.url}" alt="${alt}" width="${thumbnail.width}" height="${thumbnail.height}">`
 }
 
-async function imageUrl(src, page = this.page) {
-  const image = await findImage(src, page)
+function imageUrl(src, page = this.page) {
+  const image = findImage(src, page)
   return image.url
 }
 
-async function clickableThumbnail(src, alt, page = this.page) {
-  const img = await thumbnail(src, alt, page)
-  const largestImageUrl = await imageUrl(src, page)
+function clickableThumbnail(src, alt, page = this.page) {
+  const img = thumbnail(src, alt, page)
+  const largestImageUrl = imageUrl(src, page)
   return `<a href="${largestImageUrl}" target="_blank">${img}</a>`
 }
 
-async function imageShortcode(src, alt, sizes = "(min-width: 30em) 50vw, 100vw") {
-  const metadata = await imageMetadata(relativeFile(src, this.page))
+function imageShortcode(src, alt, sizes = "(min-width: 30em) 50vw, 100vw") {
+  const metadata = imageMetadata(relativeFile(src, this.page))
 
   const imageAttributes = {
     alt,
@@ -69,10 +69,10 @@ async function imageShortcode(src, alt, sizes = "(min-width: 30em) 50vw, 100vw")
   return image.generateHTML(metadata, imageAttributes)
 }
 
-async function carousel(srcs) {
+function carousel(srcs) {
   let slider = "<div class=\"swiffy-slider slider-indicators-sm slider-indicators-dark slider-indicators-outside slider-indicators-round slider-indicators-highlight slider-nav-dark slider-nav-chevron slider-item-ratio-contain\">"
   slider += "<ul class=\"slider-container\">"
-  for await (const thumbnail of srcs.map(src => clickableThumbnail(src, "Slider image", this.context.environments.page))) {
+  for (const thumbnail of srcs.map(src => clickableThumbnail(src, "Slider image", this.context.environments.page))) {
     slider += `<li>${thumbnail}</li>`
   }
   slider += "</ul>"
@@ -94,9 +94,9 @@ async function carousel(srcs) {
   return slider
 }
 
-async function comparison(beforeName, afterName, page = this.page) {
-  const before = await findImage(beforeName, page)
-  const after = await findImage(afterName, page)
+function comparison(beforeName, afterName, page = this.page) {
+  const before = findImage(beforeName, page)
+  const after = findImage(afterName, page)
 
   if (!before || !after) {
     throw new Error(`comparison: before (${before}) or after (${after}) not found`)
