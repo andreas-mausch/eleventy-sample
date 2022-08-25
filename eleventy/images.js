@@ -15,8 +15,12 @@ const imageMetadata = async src => await image(src, {
   }
 })
 
+function relativeFile(src, page = this.page) {
+  return path.join(path.parse(page.inputPath).dir, src)
+}
+
 async function findThumbnail(src, page = this.page) {
-  const metadata = await imageMetadata(path.join(path.parse(page.inputPath).dir, src))
+  const metadata = await imageMetadata(relativeFile(src, page))
 
   return metadata.jpeg
     ?.filter(img => img.width <= thumbnailWidth)
@@ -25,7 +29,7 @@ async function findThumbnail(src, page = this.page) {
 }
 
 async function findImage(src, page = this.page) {
-  const metadata = await imageMetadata(path.join(path.parse(page.inputPath).dir, src))
+  const metadata = await imageMetadata(relativeFile(src, page))
 
   return metadata.jpeg
     ?.sort((img1, img2) => img2.width - img1.width)
@@ -53,7 +57,7 @@ async function clickableThumbnail(src, alt, page = this.page) {
 }
 
 async function imageShortcode(src, alt, sizes = "(min-width: 30em) 50vw, 100vw") {
-  const metadata = await imageMetadata(path.join(path.parse(this.page.inputPath).dir, src))
+  const metadata = await imageMetadata(relativeFile(src))
 
   const imageAttributes = {
     alt,
