@@ -15,7 +15,7 @@ const imageMetadata = async src => await image(src, {
   }
 })
 
-function relativeFile(src, page = this.page) {
+function relativeFile(src, page) {
   return path.join(path.parse(page.inputPath).dir, src)
 }
 
@@ -57,7 +57,7 @@ async function clickableThumbnail(src, alt, page = this.page) {
 }
 
 async function imageShortcode(src, alt, sizes = "(min-width: 30em) 50vw, 100vw") {
-  const metadata = await imageMetadata(relativeFile(src))
+  const metadata = await imageMetadata(relativeFile(src, this.page))
 
   const imageAttributes = {
     alt,
