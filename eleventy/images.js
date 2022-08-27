@@ -4,16 +4,20 @@ const path = require("path")
 
 const thumbnailWidth = 300
 
-const imageMetadata = src => image.statsSync(src, {
-  widths: [null, thumbnailWidth],
-  formats: ["jpeg"],
-  urlPath: `${getPathPrefix()}/images/`,
-  outputDir: "./_site/images/",
-  filenameFormat: function (hash, src, width, format, _options) {
-    const { name } = path.parse(src)
-    return `${name}-${hash}-${width}.${format}`
+const imageMetadata = src => {
+  const options = {
+    widths: [null, thumbnailWidth],
+    formats: ["jpeg"],
+    urlPath: `${getPathPrefix()}/images/`,
+    outputDir: "./_site/images/",
+    filenameFormat: function (hash, src, width, format, _options) {
+      const { name } = path.parse(src)
+      return `${name}-${hash}-${width}.${format}`
+    }
   }
-})
+  image(src, options)
+  return image.statsSync(src, options)
+}
 
 function relativeFile(src, page) {
   return path.join(path.parse(page.inputPath).dir, src)
