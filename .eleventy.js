@@ -8,6 +8,7 @@ const katex = require("katex")
 const linkPost = require("./eleventy/link-post")
 const markdownIt = require("./eleventy/markdown")
 const postcss = require("postcss")
+const postThumbnail = require("./eleventy/post-thumbnail")
 const tableOfContents = require("eleventy-plugin-toc")
 const typescriptPlugin = require("./eleventy/typescript-esbuild")
 
@@ -33,6 +34,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLiquidShortcode("thumbnail-clickable", imageShortcodes.clickableThumbnail)
   eleventyConfig.addLiquidShortcode("carousel", imageShortcodes.carousel)
   eleventyConfig.addLiquidTag("link-post", linkPost)
+
+  eleventyConfig.addNunjucksShortcode("postThumbnail", postThumbnail)
 
   eleventyConfig.setQuietMode(true)
 

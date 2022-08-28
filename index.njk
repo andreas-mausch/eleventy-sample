@@ -7,6 +7,7 @@ layout: page
 <ol reversed class="postlist">
     {% for post in collections.posts %}
     <li class="postlist-item">
+        {% postThumbnail post %}
         <div>
             <a href="{{ post.url | url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
         </div>
