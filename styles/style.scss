@@ -114,3 +114,11 @@ figcaption {
 figcaption {
   font-style: italic;
 }
+
+@media only screen and (min-width: 481px) {
+  @import "_large";
+}
+
+@media only print {
+  @import "_print";
+}
