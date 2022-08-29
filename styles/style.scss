@@ -5,13 +5,24 @@
 @use "_image-comparison-slider.scss";
 @use "_table.scss";
 
-$background-color: #ddd;
-$brand-color: #2a7ae2;
+$background-color: #eee;
+$highlight-color: #459721;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
 
 body {
   background-color: $background-color;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 12pt;
+}
+
+.content {
+  background-color: $background-color;
+  padding: 5px;
 }
 
 img {
@@ -21,21 +32,23 @@ img {
   width: auto;
 }
 
+a {
+  color: $highlight-color;
+  text-decoration: none;
+  transition: 0.3s;
+
+  &:hover {
+    color: scale-color($highlight-color, $lightness: 30%);
+    text-decoration: underline;
+  }
+}
+
 .postlist {
   padding-left: 0;
 }
 
 .postlist-item {
   list-style-type: none;
-
-  a {
-    color: $brand-color;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
 }
 
 .toc {
@@ -99,7 +112,7 @@ kbd {
 }
 
 blockquote {
-  background: #eee;
+  background: #ccc;
   border-radius: 0.5em;
   font-family: Lucida Sans Typewriter, Lucida Console, monaco, Bitstream Vera Sans Mono, monospace;
   font-size: 11pt;
