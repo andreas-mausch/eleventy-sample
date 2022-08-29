@@ -4,9 +4,7 @@ layout: page
 
 <script src="{{ "/scripts/index.js" | url }}"></script>
 
-<h1>This is a blog post</h1>
-
-<h2>{{ title | safe }}</h2>
+<h1>Blog post: {{ title | safe }}</h1>
 
 {% if toc and content | toc %}
   <aside>
