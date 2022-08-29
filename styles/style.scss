@@ -48,7 +48,29 @@ a {
 }
 
 .postlist-item {
+  border-bottom: 2px solid #aaa;
+  display: flex;
+  flex-direction: column;
   list-style-type: none;
+  padding: 12px;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.postlist-item-thumbnail {
+  margin-right: 30px;
+  max-height: 120px;
+  width: 120px;
+}
+
+.postlist-item-content {
+  flex-grow: 1;
+}
+
+.postlist-link {
+  font-size: 14pt;
 }
 
 .toc {
