@@ -150,6 +150,19 @@ figcaption {
   font-style: italic;
 }
 
+.github-link {
+  display: flex;
+}
+
+.github-link span {
+  align-self: center;
+  margin-right: 10px;
+}
+
+.github-link img {
+  width: 50px;
+}
+
 @media only screen and (min-width: 481px) {
   @import "_large";
 }

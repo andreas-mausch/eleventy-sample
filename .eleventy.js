@@ -14,6 +14,7 @@ const typescriptPlugin = require("./eleventy/typescript-esbuild")
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("favicon.svg")
+  eleventyConfig.addPassthroughCopy("images")
   eleventyConfig.addPassthroughCopy({ "node_modules/katex/dist/fonts": "styles/fonts" })
 
   eleventyConfig.addLayoutAlias("page", "layouts/page.njk")
