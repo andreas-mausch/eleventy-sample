@@ -25,15 +25,19 @@ body {
   padding: 5px;
 }
 
-img {
+img,
+video {
   height: auto;
   max-width: 100%;
-  object-fit: contain;
-  width: auto;
 }
 
-video {
-  max-width: 100%;
+.swiffy-slider img {
+  object-fit: contain;
+}
+
+.image-comparison-slider img {
+  object-fit: contain;
+  width: auto;
 }
 
 a {
