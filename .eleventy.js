@@ -25,10 +25,6 @@ module.exports = function (eleventyConfig) {
       return !path.endsWith(".md")
         && !path.endsWith(".ts")
         && !path.endsWith(".html")
-        && !path.endsWith(".jpg")
-        && !path.endsWith(".jpeg")
-        && !path.endsWith(".png")
-        && !path.endsWith(".svg")
     }
   })
 
