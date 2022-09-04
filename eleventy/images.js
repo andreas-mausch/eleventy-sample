@@ -45,7 +45,7 @@ function findImage(src, page = this.page) {
   return {
     width: dimensions.width,
     height: dimensions.height,
-    url: path.join(page.url, src)
+    url: `${getPathPrefix()}${path.join(page.url, src)}`
   }
 }
 
