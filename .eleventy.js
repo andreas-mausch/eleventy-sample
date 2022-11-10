@@ -10,6 +10,7 @@ const linkPost = require("./eleventy/link-post")
 const markdownIt = require("./eleventy/markdown")
 const postcss = require("postcss")
 const postThumbnail = require("./eleventy/post-thumbnail")
+const rss = require("@11ty/eleventy-plugin-rss")
 const tableOfContents = require("eleventy-plugin-toc")
 const typescriptPlugin = require("./eleventy/typescript-esbuild")
 
@@ -75,5 +76,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(tableOfContents, {
     tags: ["h1", "h2", "h3", "h4", "h5"]
   })
+  eleventyConfig.addPlugin(rss)
   eleventyConfig.addPlugin(typescriptPlugin)
 }
