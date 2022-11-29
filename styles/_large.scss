@@ -2,7 +2,7 @@ body {
   background-color: #ddd;
 }
 
-.content {
+body > .content {
   border: 2px solid $highlight-color;
   border-radius: 15px;
   margin: 30px auto;
