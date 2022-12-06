@@ -14,6 +14,8 @@ const rss = require("@11ty/eleventy-plugin-rss")
 const tableOfContents = require("eleventy-plugin-nesting-toc")
 const typescriptPlugin = require("./eleventy/typescript-esbuild")
 
+const showDrafts = process.env.ELEVENTY_ENV === "development"
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("favicon.svg")
   eleventyConfig.addPassthroughCopy("images")
@@ -35,6 +37,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias("post", "layouts/post.njk")
 
   eleventyConfig.setLibrary("md", markdownIt)
+
+  eleventyConfig.addCollection("posts", collections =>
+    collections.getFilteredByTag("post")
+      .filter(post => showDrafts || !post.data.draft))
 
   eleventyConfig.addFilter("relativeFile", imageShortcodes.relativeFileFilter)
   eleventyConfig.addFilter("date", dates.date)

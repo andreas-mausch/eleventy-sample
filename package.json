@@ -2,7 +2,7 @@
   "name": "eleventy-sample",
   "version": "1.0.0",
   "scripts": {
-    "dev": "eleventy --serve",
+    "dev": "ELEVENTY_ENV=development eleventy --serve",
     "build": "ELEVENTY_ENV=production eleventy",
     "lint": "npm run lint:scripts && npm run lint:scss",
     "lint:scripts": "eslint --ignore-pattern !.eleventy.js ./.eleventy.js ./eleventy/**/*.js ./scripts/**/*.ts",
