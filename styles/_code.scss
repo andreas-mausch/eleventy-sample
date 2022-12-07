@@ -2,22 +2,18 @@
 
 pre[class*="language-"] {
   padding: 0.5em;
+  position: relative;
 }
 
 pre>code[class*="language-"],
 code[class*="language-"] {
   counter-reset: lineNumber;
-  font-size: 9pt;
 }
 
 code[data-filename]::before {
   color: #ccc;
   content: attr(data-filename);
   display: block;
-  font-family: courier, courier new, serif;
-  font-size: 11pt;
-  font-weight: 100;
-  padding-left: 0.6em;
   user-select: none;
 }
 
@@ -33,4 +29,11 @@ code[class*="language-"] .highlight-line::before {
   text-align: right;
   user-select: none;
   width: 1.4em;
+}
+
+.copy-to-clipboard {
+  font-size: inherit;
+  position: absolute;
+  right: 0.5em;
+  top: 0.5em;
 }
