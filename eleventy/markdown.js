@@ -35,6 +35,6 @@ const markdown = markdownIt({
   .use(taskCheckbox)
 
 markdown.options.highlight = lineNumbers(markdown.options.highlight)
-markdown.options.highlight = copyToClipboard(markdown.options.highlight)
+markdown.renderer.rules.fence = copyToClipboard(markdown.renderer.rules.fence)
 
 module.exports = markdown

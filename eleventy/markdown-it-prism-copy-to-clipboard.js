@@ -1,8 +1,9 @@
-module.exports = originalHighlight => {
-  return (text, lang) => {
-    const previousHtml = originalHighlight(text, lang)
-    const copyToClipboardHtml = "<button type=\"button\" class=\"copy-to-clipboard\">Copy</button>"
-
-    return copyToClipboardHtml + previousHtml
+module.exports = originalFence => {
+  return (tokens, idx, options, env, self) => {
+    const previousHtml = originalFence(tokens, idx, options, env, self)
+    return `<div class="code-block">
+    <button type="button" class="copy-to-clipboard">Copy</button>
+    ${previousHtml}
+    </div>`
   }
 }

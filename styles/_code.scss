@@ -1,8 +1,13 @@
 @use "prism-themes/themes/prism-dracula.css";
 
+.code-block {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 9pt;
+  position: relative;
+}
+
 pre[class*="language-"] {
   padding: 0.5em;
-  position: relative;
 }
 
 pre>code[class*="language-"],

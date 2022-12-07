@@ -3,7 +3,7 @@ export function copyToClipboard() {
 
   divs.forEach(element => element.addEventListener("click", event => {
     const button = (event.target as Element).closest("button")
-    const code = (event.target as Element).closest("code")
+    const code = button.nextElementSibling.querySelector("code")
     navigator.clipboard.writeText(code.innerText)
 
     button.disabled = true
