@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="">
+  <title>Eleventy Sample</title>
+  <subtitle>Example blog with Eleventy</subtitle>
+  <link href="feed.xml" rel="self"/>
+  <link href=""/>
+  <updated>2022-09-04T20:30:00Z</updated>
+  <id></id>
+  <author>
+    <name>Andreas Mausch</name>
+  </author>
+  <entry>
+    <title>Squared thumbnail</title>
+    <link href="/posts/2022-09-04-squared-thumbnail/"/>
+    <updated>2022-09-04T20:30:00Z</updated>
+    <id>/posts/2022-09-04-squared-thumbnail/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;Make sure the aspect ratio (16:10) is used in the post list to not bloat the list.&lt;/p&gt;
+&lt;img src=&quot;/eleventy-sample/posts/2022-09-04-squared-thumbnail/square.jpg&quot; width=&quot;640&quot; height=&quot;630&quot; alt=&quot;Square&quot; /&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Post with Thumbnail Reference</title>
+    <link href="/posts/2022-09-04-post-with-thumbnail-reference/"/>
+    <updated>2022-09-04T20:00:00Z</updated>
+    <id>/posts/2022-09-04-post-with-thumbnail-reference/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;This post also has a thumbnail image, but instead of taking the &lt;code class=&quot;language-plain&quot;&gt;thumbnail.jpg&lt;/code&gt; in the blog post directory,
+it references an image used in the post.&lt;/p&gt;
+&lt;img src=&quot;/eleventy-sample/posts/2022-09-04-post-with-thumbnail-reference/forest.jpg&quot; width=&quot;640&quot; height=&quot;427&quot; alt=&quot;Forest&quot; /&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Other image formats (SVG, PNG)</title>
+    <link href="/posts/2022-09-04-svg-png/"/>
+    <updated>2022-09-04T19:00:00Z</updated>
+    <id>/posts/2022-09-04-svg-png/</id>
+    <content xml:lang="en" type="html">&lt;h1 id=&quot;svg&quot; tabindex=&quot;-1&quot;&gt;1. SVG &lt;a class=&quot;header-anchor&quot; href=&quot;#svg&quot; aria-hidden=&quot;true&quot;&gt;&lt;svg viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;img src=&quot;/eleventy-sample/posts/2022-09-04-svg-png/image1.svg&quot; width=&quot;1920&quot; height=&quot;1080&quot; alt=&quot;Image1&quot; /&gt;
+&lt;img src=&quot;/eleventy-sample/images/image1-7HKrrDRDWT-300.jpeg&quot; alt=&quot;Image1 via thumbnail&quot; width=&quot;300&quot; height=&quot;168&quot; /&gt;
+&lt;h1 id=&quot;png&quot; tabindex=&quot;-1&quot;&gt;2. PNG &lt;a class=&quot;header-anchor&quot; href=&quot;#png&quot; aria-hidden=&quot;true&quot;&gt;&lt;svg viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;</content>
+  </entry>
+  <entry>
+    <title>Video</title>
+    <link href="/posts/2022-09-02-video/"/>
+    <updated>2022-09-02T08:00:00Z</updated>
+    <id>/posts/2022-09-02-video/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;Here is a video in .webm format:&lt;/p&gt;
+&lt;video preload=&quot;auto&quot; autoplay=&quot;&quot; muted=&quot;&quot; loop=&quot;&quot;&gt;
+    &lt;source src=&quot;/eleventy-sample/posts/2022-09-02-video/video.webm&quot; type=&quot;video/webm&quot; /&gt;
+  &lt;/video&gt;
+&lt;p&gt;I got this free video on &lt;a href=&quot;https://coverr.co/videos/feet-up-in-the-car--xHs8WtsG6r?utm_source=coverr&amp;amp;utm_medium=referral&amp;amp;utm_content=creditShareLink&quot; class=&quot;external-link&quot;&gt;Coverr.co&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Post with Thumbnail</title>
+    <link href="/posts/2022-08-28-post-with-thumbnail/"/>
+    <updated>2022-08-28T14:00:00Z</updated>
+    <id>/posts/2022-08-28-post-with-thumbnail/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;A blog post with a thumbnail which should show up in the post list.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Post without directory</title>
+    <link href="/posts/2022-08-25-post-without-directory/"/>
+    <updated>2022-08-25T12:00:00Z</updated>
+    <id>/posts/2022-08-25-post-without-directory/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;This is a blog post without a directory.
+It is just a single markdown file.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Tables</title>
+    <link href="/posts/2022-08-23-tables/"/>
+    <updated>2022-08-23T12:00:00Z</updated>
+    <id>/posts/2022-08-23-tables/</id>
+    <content xml:lang="en" type="html">&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;My&lt;/th&gt;
+&lt;th&gt;Markdown&lt;/th&gt;
+&lt;th&gt;Table&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;em&gt;Still&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code class=&quot;language-plain&quot;&gt;renders&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;nicely&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;td&gt;9&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;td&gt;12&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Quotes</title>
+    <link href="/posts/2022-08-22-quotes/"/>
+    <updated>2022-08-21T22:00:00Z</updated>
+    <id>/posts/2022-08-22-quotes/</id>
+    <content xml:lang="en" type="html">&lt;h1 id=&quot;without-author&quot; tabindex=&quot;-1&quot;&gt;1. Without author &lt;a class=&quot;header-anchor&quot; href=&quot;#without-author&quot; aria-hidden=&quot;true&quot;&gt;&lt;svg viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is quoted&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;with-author&quot; tabindex=&quot;-1&quot;&gt;2. With author &lt;a class=&quot;header-anchor&quot; href=&quot;#with-author&quot; aria-hidden=&quot;true&quot;&gt;&lt;svg viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;</content>
+  </entry>
+  <entry>
+    <title>Footnotes</title>
+    <link href="/posts/2022-08-20-footnotes/"/>
+    <updated>2022-08-20T11:15:00Z</updated>
+    <id>/posts/2022-08-20-footnotes/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;Here is a footnote reference.&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>kbd Keystrokes / Shortcuts</title>
+    <link href="/posts/2022-08-20-kbd-keystrokes/"/>
+    <updated>2022-08-20T11:00:00Z</updated>
+    <id>/posts/2022-08-20-kbd-keystrokes/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;Please press &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;R&lt;/kbd&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Checklist / Task list</title>
+    <link href="/posts/2022-08-20-checklist/"/>
+    <updated>2022-08-20T11:00:00Z</updated>
+    <id>/posts/2022-08-20-checklist/</id>
+    <content xml:lang="en" type="html">&lt;h3 id=&quot;solar-system-exploration%2C-1950s-%E2%80%93-1960s&quot; tabindex=&quot;-1&quot;&gt;1. Solar System Exploration, 1950s – 1960s &lt;a class=&quot;header-anchor&quot; href=&quot;#solar-system-exploration%2C-1950s-%E2%80%93-1960s&quot; aria-hidden=&quot;true&quot;&gt;&lt;svg viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;ul class=&quot;task-list&quot;&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; id=&quot;cbx_0&quot; disabled=&quot;true&quot; /&gt;&lt;label for=&quot;cbx_0&quot;&gt; Mercury&lt;/label&gt;&lt;/li&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; id=&quot;cbx_1&quot; checked=&quot;true&quot; disabled=&quot;true&quot; /&gt;&lt;label for=&quot;cbx_1&quot;&gt; Venus&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>Formula via Katex</title>
+    <link href="/posts/2022-08-17-katex-formula/"/>
+    <updated>2022-08-17T19:00:00Z</updated>
+    <id>/posts/2022-08-17-katex-formula/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mo&gt;±&lt;/mo&gt;&lt;msqrt&gt;&lt;mrow&gt;&lt;msup&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;/msqrt&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;c = \pm\sqrt{a^2 + b^2}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:0.4306em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2778em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mrel&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2778em;&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1.04em;vertical-align:-0.1266em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;±&lt;/span&gt;&lt;span class=&quot;mord sqrt&quot;&gt;&lt;span class=&quot;vlist-t vlist-t2&quot;&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.9134em;&quot;&gt;&lt;span class=&quot;svg-align&quot; style=&quot;top:-3em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:3em;&quot;&gt;&lt;/span&gt;s&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Emoji</title>
+    <link href="/posts/2022-08-16-emoji/"/>
+    <updated>2022-08-16T21:00:00Z</updated>
+    <id>/posts/2022-08-16-emoji/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;&lt;span aria-label=&quot;finger pointing to the sky&quot; class=&quot;eleventy-emoji&quot; role=&quot;img&quot;&gt;☝️&lt;/span&gt;
+&lt;span aria-label=&quot;checkmark&quot; class=&quot;eleventy-emoji&quot; role=&quot;img&quot;&gt;✔️&lt;/span&gt;
+&lt;span aria-label=&quot;gorilla&quot; class=&quot;eleventy-emoji&quot; role=&quot;img&quot;&gt;🦍&lt;/span&gt;
+&lt;span aria-label=&quot;pineapple&quot; class=&quot;eleventy-emoji&quot; role=&quot;img&quot;&gt;🍍&lt;/span&gt;
+&lt;span aria-label=&quot;world-map&quot; class=&quot;eleventy-emoji&quot; role=&quot;img&quot;&gt;🗺️&lt;/span&gt;
+&lt;span aria-label=&quot;pirate-flag&quot; class=&quot;eleventy-emoji&quot; role=&quot;img&quot;&gt;🏴‍☠️&lt;/span&gt;
+&lt;span aria-label=&quot;finger pointing to the sky&quot; class=&quot;eleventy-emoji&quot; role=&quot;img&quot;&gt;☝️&lt;/span&gt;&lt;/p&gt;
+&lt;span style=&quot;font-size: 40pt&quot;&gt;
+&lt;span aria-label=&quot;finger pointing to the sky&quot; class=&quot;eleventy-emoji&quot; role=&quot;img&quot;&gt;📢&lt;/span&gt;
+&lt;/span&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Links</title>
+    <link href="/posts/2022-08-16-links/"/>
+    <updated>2022-08-16T18:00:00Z</updated>
+    <id>/posts/2022-08-16-links/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;&lt;a href=&quot;../../&quot;&gt;Internal link (../../)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;subdir/&quot;&gt;Internal link (subdir/)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;./somefile&quot;&gt;Internal link (./somefile)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/eleventy-sample/posts/2022-08-07-first-blog-post/&quot;&gt;Internal link another post: first-blog-post&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.wikipedia.org&quot; class=&quot;external-link&quot;&gt;External Link to Wikipedia&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Wiki&quot; class=&quot;external-link&quot;&gt;External Link to Wikipedia (Page)&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Image Comparison Slider</title>
+    <link href="/posts/2022-08-15-image-comparison-slider/"/>
+    <updated>2022-08-15T16:00:00Z</updated>
+    <id>/posts/2022-08-15-image-comparison-slider/</id>
+    <content xml:lang="en" type="html">&lt;div class=&quot;image-comparison-slider&quot;&gt;&lt;img-comparison-slider&gt;&lt;img slot=&quot;first&quot; src=&quot;/eleventy-sample/posts/2022-08-15-image-comparison-slider/before.jpg&quot; width=&quot;1920&quot; height=&quot;1280&quot; style=&quot;max-height: 80vh&quot; /&gt;&lt;img slot=&quot;second&quot; src=&quot;/eleventy-sample/posts/2022-08-15-image-comparison-slider/after.jpg&quot; width=&quot;1920&quot; height=&quot;1280&quot; style=&quot;max-height: 80vh&quot; /&gt;&lt;svg slot=&quot;handle&quot; class=&quot;image-comparison-slider-handle&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;125&quot; viewBox=&quot;-8 -3 16 6&quot;&gt;&lt;path stroke=&quot;#fff&quot; d=&quot;M -5 -2 L -7 0 L -5 2 M -5 -2 L -5 2 M 5 -2 L 7 0 L 5 2 M 5 -2 L 5 2&quot; stroke-width=&quot;1&quot; fill=&quot;#fff&quot; vector-effect=&quot;non-scaling-stroke&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/img-comparison-slider&gt;&lt;/div&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Table of Contents</title>
+    <link href="/posts/2022-08-15-table-of-contents/"/>
+    <updated>2022-08-15T09:00:00Z</updated>
+    <id>/posts/2022-08-15-table-of-contents/</id>
+    <content xml:lang="en" type="html">&lt;h1 id=&quot;heading-1&quot; tabindex=&quot;-1&quot;&gt;1. Heading 1 &lt;a class=&quot;header-anchor&quot; href=&quot;#heading-1&quot; aria-hidden=&quot;true&quot;&gt;&lt;svg viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore e&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Image Carousel</title>
+    <link href="/posts/2022-08-14-image-carousel/"/>
+    <updated>2022-08-14T14:00:00Z</updated>
+    <id>/posts/2022-08-14-image-carousel/</id>
+    <content xml:lang="en" type="html">&lt;div style=&quot;width: 500px; height: 300px; max-width: 100%; margin: 0 auto&quot;&gt;
+&lt;div class=&quot;swiffy-slider slider-indicators-sm slider-indicators-dark slider-indicators-outside slider-indicators-round slider-indicators-highlight slider-nav-dark slider-nav-chevron slider-item-ratio-contain&quot;&gt;&lt;ul class=&quot;slider-container&quot;&gt;&lt;li&gt;&lt;a href=&quot;/eleventy-sample/posts/2022-08-14-image-carousel/image1.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;/eleventy-sample/images/image1-zR5XbACcIJ-300.jpeg&quot; alt=&quot;Slider image&quot; width=&quot;300&quot; height=&quot;375&quot; /&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/eleventy-sample/posts/2022-08-14-image-carousel/image2.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;/eleventy-sample/images/image2-FpE6CfHCTX-300.jpeg&quot; alt=&quot;Slider image&quot; width=&quot;300&quot; height=&quot;200&quot; /&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/eleventy-sample/posts/2022-08-14-image-carousel/image3.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;/eleventy-sample/images/image3-lWno2SFCDp-300.jpeg&quot; alt=&quot;Slider image&quot; width=&quot;300&quot; height=&quot;200&quot; /&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry>
+    <title>Code Block Example</title>
+    <link href="/posts/2022-08-11-code-block/"/>
+    <updated>2022-08-11T18:00:00Z</updated>
+    <id>/posts/2022-08-11-code-block/</id>
+    <content xml:lang="en" type="html">&lt;h1 id=&quot;generic-code-block&quot; tabindex=&quot;-1&quot;&gt;1. Generic code block &lt;a class=&quot;header-anchor&quot; href=&quot;#generic-code-block&quot; aria-hidden=&quot;true&quot;&gt;&lt;svg viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;pre class=&quot;language-plain&quot;&gt;&lt;code class=&quot;language-plain&quot;&gt;&lt;span class=&quot;highlight-line&quot;&gt;Some generic code&lt;/span&gt;
+&lt;span class=&quot;highlight-line&quot;&gt;Some very long line, which shouldn&#39;t cause horizontal scrolling on mobile.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&quot;inline-code&quot; tabindex=&quot;-1&quot;&gt;2. Inline code &lt;a class=&quot;header-anchor&quot; href=&quot;#inline-code&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt;&lt;/h1&gt;</content>
+  </entry>
+  <entry>
+    <title>Typescript Example (Toast)</title>
+    <link href="/posts/2022-08-07-typescript-example/"/>
+    <updated>2022-08-07T20:00:00Z</updated>
+    <id>/posts/2022-08-07-typescript-example/</id>
+    <content xml:lang="en" type="html">&lt;input type=&quot;button&quot; value=&quot;Show a Toast&quot; onclick=&quot;showToast()&quot; /&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Image Thumbnails</title>
+    <link href="/posts/2022-08-07-image-thumbnails/"/>
+    <updated>2022-08-07T18:00:00Z</updated>
+    <id>/posts/2022-08-07-image-thumbnails/</id>
+    <content xml:lang="en" type="html">&lt;h1 id=&quot;image-1&quot; tabindex=&quot;-1&quot;&gt;1. Image 1 &lt;a class=&quot;header-anchor&quot; href=&quot;#image-1&quot; aria-hidden=&quot;true&quot;&gt;&lt;svg viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;img src=&quot;/eleventy-sample/posts/2022-08-07-image-thumbnails/image1.jpg&quot; width=&quot;640&quot; height=&quot;427&quot; alt=&quot;Image1&quot; /&gt;
+&lt;h2 id=&quot;thumbnail-of-image-1&quot; tabindex=&quot;-1&quot;&gt;1.1. Thumbnail of Image 1 &lt;a class=&quot;header-anchor&quot; href=&quot;#thumbnail-of-image-1&quot; aria-hidden=&quot;true&quot;&gt;&lt;svg viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;</content>
+  </entry>
+  <entry>
+    <title>This is my first post.</title>
+    <link href="/posts/2022-08-07-first-blog-post/"/>
+    <updated>2022-08-07T13:00:00Z</updated>
+    <id>/posts/2022-08-07-first-blog-post/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;This is the Markdown content of my first blog post.&lt;/p&gt;
+&lt;img src=&quot;/eleventy-sample/posts/2022-08-07-first-blog-post/image.jpg&quot; width=&quot;640&quot; height=&quot;480&quot; alt=&quot;Image&quot; /&gt;
+</content>
+  </entry>
+</feed>
