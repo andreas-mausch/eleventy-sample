@@ -1,1 +1,1 @@
-(()=>{function r(){document.querySelectorAll(".copy-to-clipboard").forEach(e=>e.addEventListener("click",o=>{let t=o.target.closest("code");navigator.clipboard.writeText(t.innerText)}))}})();
+(()=>{function i(){document.querySelectorAll(".copy-to-clipboard").forEach(o=>o.addEventListener("click",t=>{let e=t.target.closest("button"),n=t.target.closest("code");navigator.clipboard.writeText(n.innerText),e.disabled=!0,e.innerText="Copied!",setTimeout(()=>{e.innerText="Copy",e.disabled=!1},3e3)}))}})();
