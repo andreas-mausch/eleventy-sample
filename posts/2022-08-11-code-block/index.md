@@ -48,3 +48,13 @@ const prism = require('markdown-it-prism')
 
 md.use(prism, options)
 ```
+
+# Shell block (command and it's output)
+
+```shell-session
+$ ls -lah
+total 1088
+drwxr-xr-x   34 neonew  staff   1,1K 18 Dez 03:24 .
+drwx------@  28 neonew  staff   896B  9 Dez 23:18 ..
+-rw-r--r--    1 neonew  staff   1,9K  9 Dez 00:12 README.md
+````
