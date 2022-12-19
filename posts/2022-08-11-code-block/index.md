@@ -36,10 +36,6 @@ fun main() {
 }
 ```
 
-```bash
-$ echo "This is a bash command"
-```
-
 # Code block with a filename
 
 ```js {data-filename=test.js}
@@ -49,7 +45,16 @@ const prism = require('markdown-it-prism')
 md.use(prism, options)
 ```
 
-# Shell block (command and it's output)
+# Bash
+
+## Commands only
+
+```bash
+echo "This is a bash command"
+cat myfile
+```
+
+## Shell session (command and it's output)
 
 ```shell-session
 $ ls -lah
