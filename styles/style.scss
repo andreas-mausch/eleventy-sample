@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "toastify-js/src/toastify.css";
 @use "img-comparison-slider/dist/styles.css";
 @use "_code.scss";
@@ -42,7 +43,7 @@ a {
   transition: 0.3s;
 
   &:hover {
-    color: scale-color($highlight-color, $lightness: 30%);
+    color: color.scale($highlight-color, $lightness: 30%);
     text-decoration: underline;
   }
 }

@@ -2,5 +2,4 @@ extends: stylelint-config-sass-guidelines
 rules:
   max-nesting-depth: 2
   selector-no-qualifying-type: null
-  string-quotes: double
   scss/at-import-no-partial-leading-underscore: null
