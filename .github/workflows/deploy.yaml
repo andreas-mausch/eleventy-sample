@@ -16,6 +16,10 @@ jobs:
         with:
           node-version: 18
 
+      # Graphviz is needed for more complex PlantUML diagrams
+      - name: Setup Graphviz
+        uses: ts-graphviz/setup-graphviz@v2
+
       - name: Install dependencies & build
         run: |
           npm ci
