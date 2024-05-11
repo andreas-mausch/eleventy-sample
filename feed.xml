@@ -4,11 +4,19 @@
   <subtitle>Example blog with Eleventy</subtitle>
   <link href="feed.xml" rel="self"/>
   <link href=""/>
-  <updated>2024-05-09T21:00:00Z</updated>
+  <updated>2024-05-10T23:00:00Z</updated>
   <id></id>
   <author>
     <name>Andreas Mausch</name>
   </author>
+  <entry>
+    <title>QR Code</title>
+    <link href="/posts/2024-05-11-qr-code/"/>
+    <updated>2024-05-10T23:00:00Z</updated>
+    <id>/posts/2024-05-11-qr-code/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;Generated QR code for &lt;a href=&quot;https://www.11ty.dev&quot; class=&quot;external-link&quot;&gt;https://www.11ty.dev&lt;/a&gt;:&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>PlantUML</title>
     <link href="/posts/2024-05-09-plantuml/"/>
