@@ -36,9 +36,27 @@ fun main() {
 }
 ```
 
+# Start with line number
+
+```js{data-linenumber-start=17}
+const md = require('markdown-it')()
+const prism = require('markdown-it-prism')
+
+md.use(prism, options)
+```
+
 # Code block with a filename
 
-```js {data-filename=test.js}
+```js{data-filename=test.js}
+const md = require('markdown-it')()
+const prism = require('markdown-it-prism')
+
+md.use(prism, options)
+```
+
+# Filename and line number
+
+```js{data-filename=test.js data-linenumber-start=17}
 const md = require('markdown-it')()
 const prism = require('markdown-it-prism')
 
