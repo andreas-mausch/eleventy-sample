@@ -64,6 +64,10 @@ a {
   }
 }
 
+.postlist-item.postlist-item-draft {
+  background-color: color.scale($highlight-color, $lightness: -30%);
+}
+
 .postlist-item-thumbnail {
   margin-right: 30px;
   max-height: 120px;
