@@ -26,6 +26,7 @@
     "esbuild": "0.21.1",
     "eslint": "8.56.0",
     "glob": "10.3.14",
+    "jsdom": "26.0.0",
     "markdown-it-anchor": "8.6.7",
     "markdown-it-attribution": "0.1.4",
     "markdown-it-attrs": "4.1.6",

@@ -30,3 +30,12 @@ table th {
   padding-top: 12px;
   text-align: left;
 }
+
+.hexview-table {
+  font-size: 87.5%;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  td {
+    padding: 4px;
+  }
+}
