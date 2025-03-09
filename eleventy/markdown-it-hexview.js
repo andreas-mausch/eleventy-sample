@@ -119,25 +119,24 @@ function buildHexView(document, rawData, caption, step, showLineNums, wordSize, 
 }
 
 module.exports = function markdownItHexView(md, options = {}) {
-  const openMarker = options.openMarker || "```hexview"
-  const openChar = openMarker.charCodeAt(0)
+  const regex = /^```hexview\{([^}]*)\}/
   const closeMarker = options.closeMarker || "```"
   const closeChar = closeMarker.charCodeAt(0)
 
-  function buildFromBase64(slf, content) {
+  function buildFromBase64(slf, content, highlights) {
     const rawData = atob(remove_whitespace(content))
+    highlights = JSON.parse(`[${highlights.replace(/([#\w]+)/g, "\"$1\"")}]`)
 
     const dom = new JSDOM("<!DOCTYPE html><html><body></body></html>")
-    const highlights = []
     const table = buildHexView(dom.window.document, rawData, "Test caption", 16, true, 1, 8, highlights)
 
     return table.outerHTML
   }
 
   function render(tokens, idx, _options, _env, slf) {
-    const { content } = tokens[idx]
+    const { content, attributes } = tokens[idx]
     try {
-      return buildFromBase64(slf, content)
+      return buildFromBase64(slf, content, attributes["data-highlights"])
     }
     catch (error) {
       return `<p style="border: 2px dashed red">Failed to render hexView<span>${md.utils.escapeHtml(error.toString())}</span></p>`
@@ -145,26 +144,17 @@ module.exports = function markdownItHexView(md, options = {}) {
   }
 
   function hexView(state, startLine, endLine, silent) {
+    const firstLine = state.src.split("\n")[startLine]
+    const match = firstLine.match(regex)
     let nextLine
     let i
     let autoClosed = false
     let start = state.bMarks[startLine] + state.tShift[startLine]
     let max = state.eMarks[startLine]
 
-    // Check out the first character quickly,
-    // this should filter out most of non-hexview blocks
-    if (openChar !== state.src.charCodeAt(start)) {
+    if (!match) {
       return false
     }
-
-    // Check out the rest of the marker string
-    for (i = 0; i < openMarker.length; ++i) {
-      if (openMarker[i] !== state.src[start + i]) {
-        return false
-      }
-    }
-
-    const params = state.src.slice(start + i, max)
 
     // Since start is found, we can report success here in validation mode
     if (silent) {
@@ -230,7 +220,8 @@ module.exports = function markdownItHexView(md, options = {}) {
       .join("\n")
 
     const token = state.push("hexView", "fence", 0)
-    token.info = params
+    const attributes = match[1].trim()
+    token.attributes = attributes ? Object.fromEntries(attributes.split(" ").map(attr => attr.split("="))) : []
     token.content = contents
 
     state.line = nextLine + (autoClosed ? 1 : 0)
