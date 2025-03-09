@@ -4,11 +4,19 @@
   <subtitle>Example blog with Eleventy</subtitle>
   <link href="feed.xml" rel="self"/>
   <link href=""/>
-  <updated>2024-05-10T23:00:00Z</updated>
+  <updated>2025-03-07T18:00:00Z</updated>
   <id></id>
   <author>
     <name>Andreas Mausch</name>
   </author>
+  <entry>
+    <title>HexView</title>
+    <link href="/posts/2025-03-07-hex-view/"/>
+    <updated>2025-03-07T18:00:00Z</updated>
+    <id>/posts/2025-03-07-hex-view/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;Here comes the hex view:&lt;/p&gt;
+&lt;table class=&quot;hexview-table hexview&quot;&gt;&lt;caption&gt;Test caption&lt;/caption&gt;&lt;tr class=&quot;hexview&quot;&gt;&lt;td class=&quot;hexview-offset&quot;&gt;00000000 &lt;/td&gt;&lt;td&gt;FF &lt;/td&gt;&lt;td&gt;D8 &lt;/td&gt;&lt;td&gt;FF &lt;/td&gt;&lt;td&gt;E0 &lt;/td&gt;&lt;td&gt;00 &lt;/td&gt;&lt;td&gt;10 &lt;/td&gt;&lt;td&gt;4A &lt;/td&gt;&lt;td&gt;46&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/td&gt;&lt;td&gt;49 &lt;/td&gt;&lt;td&gt;46 &lt;/td&gt;&lt;td&gt;00 &lt;/td&gt;&lt;td&gt;01 &lt;/td&gt;&lt;td&gt;01 &lt;/td&gt;&lt;td&gt;01 &lt;/td&gt;&lt;td&gt;00 &lt;/td&gt;&lt;td&gt;48 &lt;/td&gt;&lt;td class=&quot;hexview-visual&quot;&gt;......JFIF.....H&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;hexview&quot;&gt;&lt;td class=&quot;hexview-offset&quot;&gt;00000010 &lt;/td&gt;&lt;td&gt;00 &lt;/td&gt;&lt;td&gt;48 &lt;/td&gt;&lt;td&gt;00 &lt;/td&gt;&lt;td&gt;00 &lt;/td&gt;&lt;td&gt;FF &lt;/td&gt;&lt;td&gt;E1 &lt;/td&gt;&lt;td&gt;1C &lt;/td&gt;&lt;td&gt;E6&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/td&gt;&lt;td&gt;45 &lt;/td&gt;&lt;td&gt;78 &lt;/td&gt;&lt;td&gt;69 &lt;/td&gt;&lt;td&gt;66 &lt;/td&gt;&lt;td&gt;00 &lt;/td&gt;&lt;td&gt;00 &lt;/td&gt;&lt;td&gt;4D &lt;/td&gt;&lt;td&gt;4D &lt;/td&gt;&lt;td class=&quot;hexview-visual&quot;&gt;.H......Exif..MM&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;hexview&quot;&gt;&lt;td class=&quot;hexview-offset&quot;&gt;00000020 &lt;/td&gt;&lt;td&gt;00 &lt;/td&gt;&lt;td&gt;2A &lt;/td&gt;&lt;td&gt;00 &lt;/td&gt;&lt;td&gt;00 &lt;/td&gt;&lt;td&gt;00 &lt;/td&gt;&lt;td&gt;08 &lt;/td&gt;&lt;td&gt;00 &lt;/td&gt;&lt;td&gt;0C&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/td&gt;&lt;td&gt;01 &lt;/td&gt;&lt;td&gt;0F &lt;/td&gt;&lt;td&gt;00 &lt;/td&gt;&lt;td&gt;02 &lt;/td&gt;&lt;td&gt;00 &lt;/td&gt;&lt;td&gt;00 &lt;/td&gt;&lt;td&gt;00 &lt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</content>
+  </entry>
   <entry>
     <title>QR Code</title>
     <link href="/posts/2024-05-11-qr-code/"/>
