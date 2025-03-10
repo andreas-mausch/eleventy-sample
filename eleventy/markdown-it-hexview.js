@@ -119,13 +119,14 @@ function buildHexView(document, rawData, caption, step, showLineNums, wordSize, 
 }
 
 module.exports = function markdownItHexView(md, options = {}) {
-  const regex = /^```hexview\{([^}]*)\}/
+  const regex = /^```hexview(\{([^}]*)\})?/
   const closeMarker = options.closeMarker || "```"
   const closeChar = closeMarker.charCodeAt(0)
 
   function buildFromBase64(slf, content, highlights) {
     const rawData = atob(remove_whitespace(content))
-    highlights = JSON.parse(`[${highlights.replace(/([#\w]+)/g, "\"$1\"")}]`)
+    highlights = highlights ? highlights.replace(/([#\w]+)/g, "\"$1\"") : ""
+    highlights = JSON.parse(`[${highlights}]`)
 
     const dom = new JSDOM("<!DOCTYPE html><html><body></body></html>")
     const table = buildHexView(dom.window.document, rawData, "Test caption", 16, true, 1, 8, highlights)
@@ -215,7 +216,7 @@ module.exports = function markdownItHexView(md, options = {}) {
       .join("\n")
 
     const token = state.push("hexview", "fence", 0)
-    const attributes = match[1].trim()
+    const attributes = match[2]?.trim()
     token.attributes = attributes ? Object.fromEntries(attributes.split(" ").map(attr => attr.split("="))) : []
     token.content = contents
 
