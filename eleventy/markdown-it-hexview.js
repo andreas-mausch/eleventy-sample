@@ -135,12 +135,7 @@ module.exports = function markdownItHexView(md, options = {}) {
 
   function render(tokens, idx, _options, _env, slf) {
     const { content, attributes } = tokens[idx]
-    try {
-      return buildFromBase64(slf, content, attributes["data-highlights"])
-    }
-    catch (error) {
-      return `<p style="border: 2px dashed red">Failed to render hexView<span>${md.utils.escapeHtml(error.toString())}</span></p>`
-    }
+    return buildFromBase64(slf, content, attributes["data-highlights"])
   }
 
   function hexView(state, startLine, endLine, silent) {
