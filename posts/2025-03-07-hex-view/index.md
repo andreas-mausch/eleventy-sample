@@ -23,4 +23,10 @@ AAAAwAEoAAMAAAABAAIAAAExAAIAAAAvAAAAyAEyAAIAAAAUAAAA+AITAAMAAAAB AAIAAIKYAAIAAAA
 RklMTQAARmluZVBpeCBGNDU1ICAgAAAAAEgAAAABAAAASAAAAA==
 ```
 
+# Show Hex view from file
+
+```hexview
+{{ "esp-01s.jpg" | fileBase64 | slice: 0, 256 }}
+```
+
 This is after the hex view.

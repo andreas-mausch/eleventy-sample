@@ -14,6 +14,7 @@ const qrCode = require("./eleventy/qr-code")
 const rss = require("@11ty/eleventy-plugin-rss")
 const tableOfContents = require("eleventy-plugin-nesting-toc")
 const typescriptPlugin = require("./eleventy/typescript-esbuild")
+const fs = require("fs")
 
 const showDrafts = process.env.ELEVENTY_ENV === "development"
 
@@ -50,6 +51,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("carousel", imageShortcodes.carousel)
   eleventyConfig.addFilter("glob", files.glob)
   eleventyConfig.addFilter("katex", text => katex.renderToString(text, { throwOnError: false }))
+  eleventyConfig.addFilter("fileBase64", function (filename) { return fs.readFileSync(imageShortcodes.relativeFile(filename, this.page), {encoding: "base64"}) })
   eleventyConfig.addAsyncShortcode("qr-code", qrCode)
 
   eleventyConfig.addLiquidShortcode("image", imageShortcodes.imageShortcode)
