@@ -149,7 +149,7 @@ module.exports = function markdownItHexView(md, options = {}) {
 
   function render(tokens, idx, _options, _env, _slf) {
     const { content, attributes } = tokens[idx]
-    return buildFromBase64(content, attributes["caption"], attributes["data-highlights"])
+    return buildFromBase64(content, attributes["caption"], attributes["highlights"])
   }
 
   function hexView(state, startLine, endLine, silent) {
