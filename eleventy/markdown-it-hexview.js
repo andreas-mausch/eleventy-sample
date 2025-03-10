@@ -219,7 +219,7 @@ module.exports = function markdownItHexView(md, options = {}) {
       .slice(startLine + 1, nextLine)
       .join("\n")
 
-    const token = state.push("hexView", "fence", 0)
+    const token = state.push("hexview", "fence", 0)
     const attributes = match[1].trim()
     token.attributes = attributes ? Object.fromEntries(attributes.split(" ").map(attr => attr.split("="))) : []
     token.content = contents
@@ -229,9 +229,9 @@ module.exports = function markdownItHexView(md, options = {}) {
     return true
   }
 
-  md.block.ruler.before("fence", "hexView", hexView, {
+  md.block.ruler.before("fence", "hexview", hexView, {
     alt: ["paragraph", "reference", "blockquote", "list"]
   })
 
-  md.renderer.rules.hexView = render
+  md.renderer.rules.hexview = render
 }
