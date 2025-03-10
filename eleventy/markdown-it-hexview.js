@@ -1,4 +1,5 @@
 const { JSDOM } = require("jsdom")
+const contrast = require("get-contrast")
 
 var HEX = "0123456789ABCDEF"
 
@@ -18,6 +19,17 @@ function dec_to_hex8(dec) {
     str += dec2_to_hex((dec >> (i * 8)) & 255)
   }
   return str
+}
+
+function getTextColorForBackground(backgroundColor) {
+  const blackTextColor = "#000000"
+  const whiteTextColor = "#ffffff"
+
+  const blackContrast = contrast.ratio(backgroundColor, blackTextColor)
+  const whiteContrast = contrast.ratio(backgroundColor, whiteTextColor)
+
+  // Return black or white text based on the highest contrast ratio
+  return blackContrast > whiteContrast ? blackTextColor : whiteTextColor
 }
 
 function buildHexView(document, rawData, caption, step, showLineNums, wordSize, rowBreak, highlights) {
@@ -43,6 +55,7 @@ function buildHexView(document, rawData, caption, step, showLineNums, wordSize, 
 
         lastCell.classList.add("hexview-code-hi", "hexview-border-middle")
         lastCell.style.backgroundColor = highlights[idx][2]
+        lastCell.style.color = getTextColorForBackground(highlights[idx][2])
         lastCell.title = highlights[idx][3]
       } else {
         lastCell.classList.add("hexview-code")
