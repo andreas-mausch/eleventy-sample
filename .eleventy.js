@@ -14,6 +14,7 @@ const qrCode = require("./eleventy/qr-code")
 const rss = require("@11ty/eleventy-plugin-rss")
 const tableOfContents = require("eleventy-plugin-nesting-toc")
 const typescriptPlugin = require("./eleventy/typescript-esbuild")
+const asciinema = require("./eleventy/asciinema")
 const fs = require("fs")
 
 const showDrafts = process.env.ELEVENTY_ENV === "development"
@@ -54,6 +55,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("fileBase64", function (filename) { return fs.readFileSync(imageShortcodes.relativeFile(filename, this.page), {encoding: "base64"}) })
   eleventyConfig.addAsyncShortcode("qr-code", qrCode)
 
+  eleventyConfig.addLiquidShortcode("asciinema", asciinema)
   eleventyConfig.addLiquidShortcode("image", imageShortcodes.imageShortcode)
   eleventyConfig.addLiquidShortcode("image-url", imageShortcodes.imageUrl)
   eleventyConfig.addLiquidShortcode("image-comparison", imageShortcodes.comparison)
