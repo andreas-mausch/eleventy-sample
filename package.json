@@ -51,6 +51,7 @@
     "typescript": "5.8.2"
   },
   "dependencies": {
+    "@eslint/compat": "1.2.7",
     "img-comparison-slider": "8.0.6",
     "katex": "0.16.21",
     "prism-themes": "1.9.0",
