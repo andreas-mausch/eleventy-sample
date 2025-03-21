@@ -6,7 +6,7 @@
     "dev": "ELEVENTY_ENV=development eleventy --serve",
     "build": "ELEVENTY_ENV=production eleventy",
     "lint": "npm run lint:scripts && npm run lint:scss",
-    "lint:scripts": "eslint ./eleventy.config.js ./eleventy/**/*.js ./scripts/**/*.ts",
+    "lint:scripts": "eslint .",
     "lint:scss": "stylelint ./styles/**/*.scss",
     "check": "tsc",
     "clean": "rimraf ./_site/"
