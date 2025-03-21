@@ -49,7 +49,6 @@
     "typescript": "5.4.5"
   },
   "dependencies": {
-    "@11ty/eleventy-upgrade-help": "3.0.1",
     "img-comparison-slider": "8.0.6",
     "katex": "0.16.10",
     "prism-themes": "1.9.0",
