@@ -1,15 +1,19 @@
-body {
-  background-color: #ddd;
-}
+@mixin large($highlight-color) {
+  @media only screen and (min-width: 641px) {
+    body {
+      background-color: #ddd;
+    }
 
-body > .content {
-  border: 2px solid $highlight-color;
-  border-radius: 15px;
-  margin: 30px auto;
-  max-width: 1200px;
-  padding: 40px;
-}
+    body > .content {
+      border: 2px solid $highlight-color;
+      border-radius: 15px;
+      margin: 30px auto;
+      max-width: 1200px;
+      padding: 40px;
+    }
 
-.postlist-item {
-  flex-direction: row;
+    .postlist-item {
+      flex-direction: row;
+    }
+  }
 }

@@ -196,10 +196,10 @@ Adding the generator tag to the `page.njk` fixed it.
 
 ## Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
 
+Replaced by `@mixin` and `@include`.
+
 # TODO
 
-- Fix Warnings and Notices
-- Remove `eleventy-upgrade-help` from project
 - Convert `.eleventy.js` to `eleventy.config.js` in the new module format
 - Convert `eleventy.config.js` to Typescript: <https://www.11ty.dev/docs/languages/typescript/#using-a-type-script-configuration-file>
 - `eleventy/typescript-esbuild.js` still needed?
