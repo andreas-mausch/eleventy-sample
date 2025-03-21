@@ -32,7 +32,7 @@ rules:
       varsIgnorePattern: ^_
       caughtErrorsIgnorePattern: ^_
 overrides:
-  - files: [".eleventy.js", "eleventy/*.js" ]
+  - files: ["eleventy.config.js", "eleventy/*.js" ]
     env:
       node: true
     rules:

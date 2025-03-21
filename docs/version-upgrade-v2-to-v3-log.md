@@ -198,10 +198,17 @@ Adding the generator tag to the `page.njk` fixed it.
 
 Replaced by `@mixin` and `@include`.
 
+# Convert `.eleventy.js` to `eleventy.config.js` in the new module format
+
+`.eleventy.js` was in CommonJS, and the new `eleventy.config.js` is in ESM format.
+Mostly `require` becomes `import` and the `exports` change a bit.
+
+I also used `__dirname` in `eleventy/typescript-esbuild.js`, which was replaced by `path.resolve()`.
+
 # TODO
 
-- Convert `.eleventy.js` to `eleventy.config.js` in the new module format
 - Convert `eleventy.config.js` to Typescript: <https://www.11ty.dev/docs/languages/typescript/#using-a-type-script-configuration-file>
 - `eleventy/typescript-esbuild.js` still needed?
 - Convert all remaining eleventy config to typescript
 - Use RSS plugin instead of self-written `feed.njk`
+- Upgrade all dependencies

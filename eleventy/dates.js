@@ -1,7 +1,11 @@
-const { DateTime } = require("luxon")
+import { DateTime } from "luxon"
 
-module.exports = {
-  date: dateObject => DateTime.fromJSDate(dateObject).setLocale("de").toLocaleString(DateTime.DATE_FULL),
-  isoDate: dateObject => DateTime.fromJSDate(dateObject).toISODate(),
-  isoDateTime: dateObject => DateTime.fromJSDate(dateObject).toISO()
+const date = dateObject => DateTime.fromJSDate(dateObject).setLocale("de").toLocaleString(DateTime.DATE_FULL)
+const isoDate = dateObject => DateTime.fromJSDate(dateObject).toISODate()
+const isoDateTime = dateObject => DateTime.fromJSDate(dateObject).toISO()
+
+export {
+  date,
+  isoDate,
+  isoDateTime
 }

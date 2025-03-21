@@ -1,11 +1,12 @@
 {
   "name": "eleventy-sample",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "dev": "ELEVENTY_ENV=development eleventy --serve",
     "build": "ELEVENTY_ENV=production eleventy",
     "lint": "npm run lint:scripts && npm run lint:scss",
-    "lint:scripts": "eslint --ignore-pattern !.eleventy.js ./.eleventy.js ./eleventy/**/*.js ./scripts/**/*.ts",
+    "lint:scripts": "eslint ./eleventy.config.js ./eleventy/**/*.js ./scripts/**/*.ts",
     "lint:scss": "stylelint ./styles/**/*.scss",
     "check": "tsc",
     "clean": "rimraf ./_site/"
