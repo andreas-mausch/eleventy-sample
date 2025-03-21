@@ -205,10 +205,44 @@ Mostly `require` becomes `import` and the `exports` change a bit.
 
 I also used `__dirname` in `eleventy/typescript-esbuild.js`, which was replaced by `path.resolve()`.
 
-# TODO
+# 2 high severity vulnerabilities
 
-- Convert `eleventy.config.js` to Typescript: <https://www.11ty.dev/docs/languages/typescript/#using-a-type-script-configuration-file>
-- `eleventy/typescript-esbuild.js` still needed?
-- Convert all remaining eleventy config to typescript
-- Use RSS plugin instead of self-written `feed.njk`
-- Upgrade all dependencies
+```shell-session
+$ npm install
+
+added 622 packages, and audited 623 packages in 1m
+
+150 packages are looking for funding
+  run `npm fund` for details
+
+2 high severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+$ npm audit
+# npm audit report
+
+cross-spawn  <6.0.6
+Severity: high
+Regular Expression Denial of Service (ReDoS) in cross-spawn - https://github.com/advisories/GHSA-3xgq-45jj-v275
+fix available via `npm audit fix --force`
+Will install pre-commit@1.0.10, which is a breaking change
+node_modules/pre-commit/node_modules/cross-spawn
+  pre-commit  >=1.1.0
+  Depends on vulnerable versions of cross-spawn
+  node_modules/pre-commit
+
+2 high severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+```
+
+This is not fixed because `pre-commit` has a security issue in it's dependencies:
+
+[Upgrade cross-spawn Dependency to Address Security Vulnerability (ReDoS)](https://github.com/observing/pre-commit/issues/167)
+
+Since the last commit to `pre-commit` was six years ago, I'm not sure this will ever get fixed. I will look for an alternative.
