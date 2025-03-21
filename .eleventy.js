@@ -16,6 +16,7 @@ const tableOfContents = require("eleventy-plugin-nesting-toc")
 const typescriptPlugin = require("./eleventy/typescript-esbuild")
 const asciinema = require("./eleventy/asciinema")
 const fs = require("fs")
+const upgradeHelper = require("@11ty/eleventy-upgrade-help")
 
 const showDrafts = process.env.ELEVENTY_ENV === "development"
 
@@ -90,4 +91,5 @@ module.exports = function (eleventyConfig) {
   })
   eleventyConfig.addPlugin(rss)
   eleventyConfig.addPlugin(typescriptPlugin)
+  eleventyConfig.addPlugin(upgradeHelper)
 }
