@@ -301,3 +301,19 @@ package imports via `@use "pkg:.."`.
 
 See here:
 <https://sass-lang.com/documentation/at-rules/use/#pkg-ur-ls>
+
+# Eleventy PathPrefix issues
+
+After doing the change, my browser tried to find the css at
+`/eleventy-sample/eleventy-sample/styles/style.css`
+
+So it duplicated the path prefix for some reason.
+
+<https://www.11ty.dev/docs/config/#deploy-to-a-subdirectory-with-a-path-prefix>
+<https://www.11ty.dev/docs/plugins/html-base/>
+
+I don't need the URL filter anymore:
+<https://www.11ty.dev/docs/filters/url/>
+
+And I also don't need the ugly workaround using my custom
+`ELEVENTY_PATH_PREFIX` environment variable. Great.

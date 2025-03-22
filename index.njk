@@ -11,12 +11,12 @@ layout: page
 
 <p class="image-link">
     <span>This project is on GitHub:</span>
-    <a href="https://github.com/andreas-mausch/eleventy-sample" target="_blank"><img src="{{ "/images/github.svg" | url }}" alt="GitHub Icon"/></a>
+    <a href="https://github.com/andreas-mausch/eleventy-sample" target="_blank"><img src="/images/github.svg" alt="GitHub Icon"/></a>
 </p>
 
 <p class="image-link">
     <span>A RSS Feed is available:</span>
-    <a href="feed.xml" target="_blank"><img src="{{ "/images/feed.svg" | url }}" alt="Feed Icon"/></a>
+    <a href="feed.xml" target="_blank"><img src="/images/feed.svg" alt="Feed Icon"/></a>
 </p>
 
 <h2>A list of all posts</h2>
@@ -29,7 +29,7 @@ layout: page
         </div>
         <div class="postlist-item-content">
             <div>
-                <a href="{{ post.url | url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
+                <a href="{{ post.url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
             </div>
             <time class="postlist-date" datetime="{{ post.date | isoDateTime }}">{{ post.date | isoDate }}</time>
         </div>
