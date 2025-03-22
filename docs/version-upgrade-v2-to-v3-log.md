@@ -246,3 +246,58 @@ This is not fixed because `pre-commit` has a security issue in it's dependencies
 [Upgrade cross-spawn Dependency to Address Security Vulnerability (ReDoS)](https://github.com/observing/pre-commit/issues/167)
 
 Since the last commit to `pre-commit` was six years ago, I'm not sure this will ever get fixed. I will look for an alternative.
+
+# Fontsource: Replace old-style mixin
+
+```shell-session
+$ npm run build
+
+> andreas-mausch-de@1.0.0 build
+> ELEVENTY_ENV=production eleventy
+
+/home/neonew/Documents/coding/andreas-mausch.github.io/_site/styles/icons/iconism.ttf font file created!
+/home/neonew/Documents/coding/andreas-mausch.github.io/_site/styles/icons/iconism.woff2 font file created!
+/home/neonew/Documents/coding/andreas-mausch.github.io/_site/styles/icons/iconism.css css file created!
+Deprecation Warning [global-builtin]: Global built-in functions are deprecated and will be removed in Dart Sass 3.0.0.
+Use list.append instead.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+    ╷
+98  │                   $src: append(
+    │ ┌───────────────────────^
+99  │ │                   $src,
+100 │ │                   url('#{$directory}/#{$variant}.#{$format}')
+101 │ │                     format('#{$format}#{if($axis, '-variations', '')}'),
+102 │ │                   comma
+103 │ │                 );
+    │ └─────────────────^
+    ╵
+    @fontsource/raleway/scss/mixins.scss 98:23  generator()
+    @fontsource/raleway/scss/mixins.scss 167:3  faces()
+    styles/style.scss 14:1                      root stylesheet
+
+```
+
+After upgrading fontsource to `5.2.5`, it gave a new warning:
+
+```
+Warning: Importing mixins via the fontsource package is deprecated and will be removed in the next major release. Please use the @fontsource-utils/scss package instead.
+    @fontsource/raleway/scss/mixins.scss 37:3   generator()
+    @fontsource/raleway/scss/mixins.scss 168:3  faces()
+    styles/style.scss 14:1                      root stylesheet
+```
+
+This could be fixed by using the new way of fontsource's mixins.
+I also switched to the variable font.
+
+<https://fontsource.org/docs/getting-started/faces-mixin>
+
+# sass NodePackageImporter
+
+I used to load scss from packages via the `loadPaths` option.
+A better way is to use the importer `NodePackageImporter` and prefix
+package imports via `@use "pkg:.."`.
+
+See here:
+<https://sass-lang.com/documentation/at-rules/use/#pkg-ur-ls>

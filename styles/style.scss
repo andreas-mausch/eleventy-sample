@@ -1,6 +1,6 @@
 @use "sass:color";
-@use "toastify-js/src/toastify.css";
-@use "img-comparison-slider/dist/styles.css";
+@use "pkg:toastify-js/src/toastify.css";
+@use "pkg:img-comparison-slider/dist/styles.css";
 @use "code";
 @use "image-carousel";
 @use "image-comparison-slider";
