@@ -1,8 +1,4 @@
-import deasync from "deasync"
-import mermaid from "mermaid"
 import { execSync } from "child_process"
-
-mermaid.initialize({ startOnLoad: false })
 
 function renderSync(code) {
   /*
@@ -24,42 +20,13 @@ function renderSync(code) {
   })
 }
 
-function _renderSyncDeasync(code) {
-  let done = false
-  let result, error
-
-  mermaid.render("id", code)
-    .then(res => {
-      console.log("HALLOXXXX 1")
-      result = res
-      done = true
-    })
-    .catch(err => {
-      console.log("HALLOXXXX 1 err")
-      error = err
-      done = true
-    })
-
-  console.log("HALLOXXXX before deasync")
-  deasync.loopWhile(() => !done)
-  // this deadlocks
-  console.log("HALLOXXXX after deasync")
-
-  if (error) {
-    throw error
-  }
-  return result
-}
-
 export default function markdownItMermaid(md, options = {}) {
   const regex = /^```mermaid(\{([^}]*)\})?/
   const closeMarker = options.closeMarker || "```"
   const closeChar = closeMarker.charCodeAt(0)
 
   function render(tokens, idx, _options, _env, _slf) {
-    const { content, attributes } = tokens[idx]
-    console.log(content, attributes["caption"], attributes["highlights"], attributes["legend"])
-
+    const { content, _attributes } = tokens[idx]
     return renderSync(content)
   }
 

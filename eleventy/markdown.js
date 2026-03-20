@@ -7,7 +7,6 @@ import footnote from "markdown-it-footnote"
 import plantUml from "markdown-it-plantuml-ex2"
 import prism from "markdown-it-prism"
 import taskCheckbox from "markdown-it-task-checkbox"
-// import mermaid from "@markslides/markdown-it-mermaid"
 
 import lineNumbers from "./markdown-it-prism-line-numbers.js"
 import lineNumbersStart from "./markdown-it-prism-line-numbers-start.js"
