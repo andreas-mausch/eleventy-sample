@@ -41,8 +41,9 @@ const markdown = markdownIt({
   .use(plantUml)
   .use(hexView)
   .use(mermaid)
+  .use(lineNumbersStart)
+  .use(copyToClipboard)
 
 markdown.options.highlight = lineNumbers(markdown.options.highlight)
-markdown.renderer.rules.fence = copyToClipboard(lineNumbersStart(markdown.renderer.rules.fence))
 
 export default markdown
