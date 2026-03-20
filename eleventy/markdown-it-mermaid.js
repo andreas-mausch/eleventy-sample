@@ -20,105 +20,20 @@ function renderSync(code) {
   })
 }
 
-export default function markdownItMermaid(md, options = {}) {
-  const regex = /^```mermaid(\{([^}]*)\})?/
-  const closeMarker = options.closeMarker || "```"
-  const closeChar = closeMarker.charCodeAt(0)
-
-  function render(tokens, idx, _options, _env, _slf) {
-    const { content, _attributes } = tokens[idx]
-    return renderSync(content)
+export default function markdownItMermaid(md, _options = {}) {
+  const originalFence = md.renderer.rules.fence || function (tokens, idx, options, env, self) {
+    return self.renderToken(tokens, idx, options)
   }
 
-  function mermaid(state, startLine, endLine, silent) {
-    const firstLine = state.src.split("\n")[startLine]
-    const match = firstLine.match(regex)
-    let nextLine
-    let i
-    let autoClosed = false
-    let start = state.bMarks[startLine] + state.tShift[startLine]
-    let max = state.eMarks[startLine]
+  md.renderer.rules.fence = function (tokens, idx, options, env, self) {
+    const token = tokens[idx]
+    const info = token.info.trim()
 
-    if (!match) {
-      return false
+    if (info === "mermaid") {
+      const processed = renderSync(token.content)
+      return `<div class="mermaid-rendered-svg">${processed}</div>`
     }
 
-    // Since start is found, we can report success here in validation mode
-    if (silent) {
-      return true
-    }
-
-    // Search for the end of the block
-    nextLine = startLine
-
-    for (; ;) {
-      nextLine++
-      if (nextLine >= endLine) {
-        // unclosed block should be autoclosed by end of document.
-        // also block seems to be autoclosed by end of parent
-        break
-      }
-
-      start = state.bMarks[nextLine] + state.tShift[nextLine]
-      max = state.eMarks[nextLine]
-
-      if (start < max && state.sCount[nextLine] < state.blkIndent) {
-        // non-empty line with negative indent should stop the list:
-        // - ```
-        //  test
-        break
-      }
-
-      if (closeChar !== state.src.charCodeAt(start)) {
-        // didn't find the closing fence
-        continue
-      }
-
-      if (state.sCount[nextLine] > state.sCount[startLine]) {
-        // closing fence should not be indented with respect of opening fence
-        continue
-      }
-
-      let closeMarkerMatched = true
-      for (i = 0; i < closeMarker.length; ++i) {
-        if (closeMarker[i] !== state.src[start + i]) {
-          closeMarkerMatched = false
-          break
-        }
-      }
-
-      if (!closeMarkerMatched) {
-        continue
-      }
-
-      // make sure tail has spaces only
-      if (state.skipSpaces(start + i) < max) {
-        continue
-      }
-
-      // found!
-      autoClosed = true
-      break
-    }
-
-    const contents = state.src
-      .split("\n")
-      .slice(startLine + 1, nextLine)
-      .join("\n")
-
-    const token = state.push("mermaid", "fence", 0)
-    const attributes = match[2]?.trim()
-    token.attributes = attributes ? Object.fromEntries(attributes.split(" ").map(attr => attr.split("="))) : []
-    token.content = contents
-
-    state.line = nextLine + (autoClosed ? 1 : 0)
-
-    return true
+    return originalFence(tokens, idx, options, env, self)
   }
-
-  md.block.ruler.before("fence", "mermaid", mermaid, {
-    alt: ["paragraph", "reference", "blockquote", "list"]
-  })
-
-  md.renderer.rules.mermaid = render
 }
