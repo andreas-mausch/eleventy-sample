@@ -9,7 +9,6 @@ import prism from "markdown-it-prism"
 import taskCheckbox from "markdown-it-task-checkbox"
 
 import lineNumbers from "./markdown-it-prism-line-numbers.js"
-import lineNumbersStart from "./markdown-it-prism-line-numbers-start.js"
 import hierarchy from "./markdown-it-hierarchy.js"
 import copyToClipboard from "./markdown-it-prism-copy-to-clipboard.js"
 import hexView from "./markdown-it-hexview.js"
@@ -41,9 +40,8 @@ const markdown = markdownIt({
   .use(plantUml)
   .use(hexView)
   .use(mermaid)
-  .use(lineNumbersStart)
+  .use(lineNumbers)
   .use(copyToClipboard)
 
-markdown.options.highlight = lineNumbers(markdown.options.highlight)
 
 export default markdown
