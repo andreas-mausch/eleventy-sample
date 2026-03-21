@@ -18,6 +18,11 @@ This is a sample 11ty project to see if it fits my needs.
   - Mark external links
   - Link to another blog posts
 - Formula (via [katex](https://github.com/KaTeX/KaTeX))
+- [PlantUML](https://plantuml.com/) diagrams
+- [mermaid.ai](https://mermaid.ai/open-source/) diagrams and charts
+- [asciinema](https://asciinema.org/) terminal session recordings
+- QR code generation
+- HexView for binary data
 - Checklist
 - Footnotes
 - Keyboard shortcuts, hotkeys, keystrokes
