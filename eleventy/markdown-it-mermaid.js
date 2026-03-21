@@ -15,7 +15,7 @@ function renderSync(code) {
     So creating a sub-process here is very heavy, but works reliable at least.
   */
 
-  return execSync("npx mmdc --outputFormat=svg --input=- --output=-", {
+  return execSync("npx mmdc --puppeteerConfigFile=./mermaid-puppeteer-config.json --outputFormat=svg --input=- --output=-", {
     input: code
   })
 }
